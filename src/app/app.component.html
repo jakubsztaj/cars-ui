@@ -4,7 +4,7 @@
 
 
 <div>
-  <table style="width:20%">
+  <table style="width:10%">
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -14,8 +14,13 @@
       <th>Category</th>
       <th>Rented</th>
       <th>Started</th>
-      <th>lastRentalDate</th>
-      <th>bringBackDate</th>
+      <th>LastRentalDate</th>
+      <th>BringBackDate</th>
+      <th>Rent Car</th>
+      <th>Bring Car</th>
+      <th>Start Car</th>
+      <th>Stop Car</th>
+      <th>Delete Car</th>
     </tr>
     <tr *ngFor="let car of cars">
       <td>{{car.name}}</td>
@@ -28,6 +33,11 @@
       <td>{{car.started?"yes":"no"}}</td>
       <td>{{car.lastRentalDate}}</td>
       <td>{{car.bringBackDate}}</td>
+      <td><button (click)="rentCar(car.vin)">rent car</button></td>
+      <td><button (click)="bringBackCar(car.vin)">bring car</button></td>
+      <td><button (click)="startCar(car.vin)">start car</button></td>
+      <td><button (click)="stopCar(car.vin)">stop car</button></td>
+      <td><button (click)="deleteCar(car.vin)">delete car</button></td>
     </tr>
 
   </table>

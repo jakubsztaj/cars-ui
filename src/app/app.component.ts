@@ -31,7 +31,43 @@ export class AppComponent {
       })
 
   }
-    addCar(): void {
+
+  rentCar(vin: string): void {
+    this.http.post <any>(`http://localhost:8080/cars/car/rent/${vin}`, {})
+      .subscribe(() => {
+        this.loadCars();
+      })
+  }
+
+  bringBackCar(vin: string): void {
+    this.http.post <any>(`http://localhost:8080/cars/car/bring/${vin}`, {})
+      .subscribe(() => {
+        this.loadCars();
+      })
+  }
+
+  startCar(vin: string): void {
+    this.http.post <any>(`http://localhost:8080/cars/start/${vin}`, {})
+      .subscribe(() => {
+        this.loadCars();
+      })
+  }
+
+  stopCar(vin: string): void {
+    this.http.post <any>(`http://localhost:8080/cars/stop/${vin}`, {})
+      .subscribe(() => {
+        this.loadCars();
+      })
+  }
+
+  deleteCar(vin: string): void {
+    this.http.delete <any>(`http://localhost:8080/cars/car/delete/${vin}`)
+      .subscribe(() => {
+        this.loadCars();
+      })
+  }
+
+  addCar(): void {
     const name = window.prompt("What name?")
     const type = window.prompt("What type?")
     const category = window.prompt("Which category?")
