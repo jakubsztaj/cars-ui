@@ -1,10 +1,35 @@
-<h3>Available Car List</h3>
+<mat-progress-bar mode="buffer"></mat-progress-bar>
 
+<h1>Available Car List</h1>
 
+<h2>Find your car</h2>
 
+<mat-form-field style="width: 200px; margin: 3px; display: block;">
+  <input type="text" matInput placeholder="Find your car by vin"
+         (input)="filterCars($event.target)">
+</mat-form-field>
+
+<mat-form-field style="width: 200px; margin: 3px; display: block;">
+  <input type="text" matInput placeholder="Find your car by name"
+         (input)="filterCarsByName($event.target)">
+</mat-form-field>
+
+<mat-form-field style="width: 200px; margin: 3px; display: block;">
+  <input type="text" matInput placeholder="Find your car by type"
+         (input)="filterCarsByType($event.target)">
+</mat-form-field>
+
+<h2>Add Car</h2>
+<button (click)="addCar()">
+  <mat-icon>plus_one</mat-icon>
+</button>
+<h2>Delete All Cars</h2>
+<button (click)="deleteCars()">
+  <mat-icon>delete</mat-icon>
+</button>
 
 <div>
-  <table style="width:10%">
+  <table style="width:20%">
     <tr>
       <th>Name</th>
       <th>Type</th>
@@ -16,11 +41,8 @@
       <th>Started</th>
       <th>LastRentalDate</th>
       <th>BringBackDate</th>
-      <th>Rent Car</th>
-      <th>Bring Car</th>
-      <th>Start Car</th>
-      <th>Stop Car</th>
-      <th>Delete Car</th>
+      <th>Last Service Date</th>
+      <th>Menu</th>
     </tr>
     <tr *ngFor="let car of cars">
       <td>{{car.name}}</td>
@@ -29,19 +51,38 @@
       <td>{{car.vin}}</td>
       <td>{{car.manufacturingYear}}</td>
       <td>{{car.category}}</td>
-      <td>{{car.rented?"yes":"no"}}</td>
-      <td>{{car.started?"yes":"no"}}</td>
+      <td>{{car.rented ? "yes" : "no"}}</td>
+      <td>{{car.started ? "yes" : "no"}}</td>
       <td>{{car.lastRentalDate}}</td>
       <td>{{car.bringBackDate}}</td>
-      <td><button (click)="rentCar(car.vin)">rent car</button></td>
-      <td><button (click)="bringBackCar(car.vin)">bring car</button></td>
-      <td><button (click)="startCar(car.vin)">start car</button></td>
-      <td><button (click)="stopCar(car.vin)">stop car</button></td>
-      <td><button (click)="deleteCar(car.vin)">delete car</button></td>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker touchUi #picker></mat-datepicker>
+        </mat-form-field>
+      </td>
+
+      <td>
+        <button mat-button [matMenuTriggerFor]="mainMenu">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #mainMenu overlapTrigger xPosition="after" yPosition="below">
+          <button (click)="rentCar(car.vin)">rent car</button>
+          <button (click)="bringBackCar(car.vin)">bring car</button>
+          <button (click)="startCar(car.vin)">start car</button>
+          <button (click)="stopCar(car.vin)">stop car</button>
+          <button button (click)="deleteCar(car.vin)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-menu>
+      </td>
     </tr>
 
   </table>
-  <button (click)="deleteCars()">delete cars</button>
-  <button (click)="addCar()">add car</button>
+
 </div>
+
+
 <router-outlet></router-outlet>

@@ -10,10 +10,13 @@ export class AppComponent {
   constructor(private http: HttpClient) {
     this.client = http;
     this.loadCars();
+    console.log("constructor")
   }
+
 
   title = 'carwebapp-ui';
   cars: any;
+  filteredCars: any;
   client: HttpClient;
 
   loadCars(): void {
@@ -78,10 +81,51 @@ export class AppComponent {
       category,
       manufacturingYear
     }
+
     this.http.post <any>('http://localhost:8080/cars/add', car)
       .subscribe(() => {
         this.loadCars();
       })
+
+  }
+
+
+  filterCars(input: any): void {
+    const vinInput = input.value;
+    if (vinInput.length > 1) {
+      this.http.get <any>("http://localhost:8080/cars/vin/" + vinInput)
+        .subscribe((cars) => {
+          this.cars = cars;
+        })
+    } else {
+      this.loadCars();
+    }
+
+  }
+
+  filterCarsByName(input: any): void {
+    const nameInput = input.value;
+    if (nameInput.length > 1) {
+      this.http.get <any>("http://localhost:8080/cars/name/" + nameInput)
+        .subscribe((cars) => {
+          this.cars = cars;
+        })
+    } else {
+      this.loadCars();
+    }
+
+  }
+
+  filterCarsByType(input: any): void {
+    const typeInput = input.value;
+    if (typeInput.length > 1) {
+      this.http.get <any>("http://localhost:8080/cars/type/" + typeInput)
+        .subscribe((cars) => {
+          this.cars = cars;
+        })
+    } else {
+      this.loadCars();
+    }
 
   }
 }
