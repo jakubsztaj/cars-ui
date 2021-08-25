@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { RenterService } from "../../service/renter.service";
 
 @Component({
@@ -13,19 +13,24 @@ export class RenterManagementComponent {
     this.loadRenters();
   }
 
-
-
   displayedColumns: string[] = ['firstName', 'lastName', 'pesel'];
-
   renterService: RenterService;
   renters: any;
+
+  addRenter(renter: any): void {
+    console.log(renter)
+    this.renterService.addRenter(renter)
+      .subscribe(() => {
+        this.loadRenters();
+      })
+
+  }
 
   loadRenters(): void {
     this.renterService.loadRenters()
       .subscribe(data => {
         this.renters = data;
       })
-
   }
 
   deleteRenters(): void {
@@ -33,8 +38,5 @@ export class RenterManagementComponent {
       .subscribe(() => {
         this.loadRenters();
       })
-
   }
-
-
 }

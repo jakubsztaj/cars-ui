@@ -1,0 +1,24 @@
+<mat-divider></mat-divider>
+<h1 mat-dialog-title>Renter</h1>
+<div mat-dialog-content>
+  <p>What's your first name?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input matInput [(ngModel)]="data.renterName">
+  </mat-form-field>
+  <p>What's your last name?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Last Name</mat-label>
+    <input matInput [(ngModel)]="data.renterLastName">
+  </mat-form-field>
+  <p>What's your pesel?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Pesel</mat-label>
+    <input matInput [(ngModel)]="data.renterPesel">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="saveRenter()">Save</button>
+</div>
+

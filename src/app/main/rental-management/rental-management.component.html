@@ -1,5 +1,9 @@
 <div>
-  <table mat-table [dataSource]="rentals" style="width:100%" >
+  <h2>Add Rental</h2>
+  <button (click)="deleteRentals()">
+    <mat-icon>plus_one</mat-icon>
+  </button>
+  <table mat-table [dataSource]="rentals" style="width:100%">
     <ng-container matColumnDef="vin">
       <th mat-header-cell *matHeaderCellDef> Vin</th>
       <td mat-cell *matCellDef="let element"> {{element.car.vin}} </td>
@@ -27,5 +31,8 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-
+  <h2>Delete All Rentals</h2>
+  <button (click)="deleteRentals()">
+    <mat-icon>delete</mat-icon>
+  </button>
 </div>

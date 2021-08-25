@@ -13,7 +13,7 @@ export class RentalManagementComponent {
     this.loadRentals();
   }
 
-  displayedColumns: string[] = ['vin','firstName', 'lastName', 'pesel','rentalBegin','rentalEnd'];
+  displayedColumns: string[] = ['vin', 'firstName', 'lastName', 'pesel', 'rentalBegin', 'rentalEnd'];
 
   rentalService: RentalService;
   rentals: any;
@@ -33,5 +33,4 @@ export class RentalManagementComponent {
       })
 
   }
-
 }

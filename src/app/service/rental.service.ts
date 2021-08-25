@@ -17,6 +17,7 @@ export class RentalService {
   loadRentals(): Observable<any> {
     return this.http.get<any>(this.url);
   }
+
   deleteRentals(): Observable<any> {
     return this.http.delete <any>(`${this.url}/delete`);
   }

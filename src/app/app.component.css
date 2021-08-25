@@ -1,6 +1,7 @@
 mat-form-field {
   margin-right: 12px;
 }
+
 .main-container {
   position: absolute;
   top: 0;
@@ -9,6 +10,7 @@ mat-form-field {
   right: 0;
   background: #eee;
 }
+
 .list-horizontal {
   display: flex;
   flex-direction: row;

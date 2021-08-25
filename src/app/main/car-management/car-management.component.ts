@@ -102,6 +102,7 @@ export class CarManagementComponent {
     }
 
   }
+
   filterCarsByVin(input: any): void {
     const nameInput = input.value;
     if (nameInput.length > 1) {
@@ -114,6 +115,7 @@ export class CarManagementComponent {
     }
 
   }
+
   filterCarsByType(input: any): void {
     const typeInput = input.value;
     if (typeInput.length > 1) {

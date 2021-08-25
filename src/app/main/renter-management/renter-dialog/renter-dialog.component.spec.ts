@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CarManagementComponent } from './car-management.component';
+import { RenterDialogComponent } from './renter-dialog.component';
 
-describe('CarManagementComponent', () => {
-  let component: CarManagementComponent;
-  let fixture: ComponentFixture<CarManagementComponent>;
+describe('RenterDialogComponent', () => {
+  let component: RenterDialogComponent;
+  let fixture: ComponentFixture<RenterDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CarManagementComponent]
+      declarations: [RenterDialogComponent]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CarManagementComponent);
+    fixture = TestBed.createComponent(RenterDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
