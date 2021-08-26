@@ -1,0 +1,28 @@
+<mat-divider></mat-divider>
+<h1 mat-dialog-title>Car</h1>
+<div mat-dialog-content>
+  <p>What's the car type?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Type</mat-label>
+    <input matInput [(ngModel)]="data.type">
+  </mat-form-field>
+  <p>What's the car's name?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="data.name">
+  </mat-form-field>
+  <p>What's the car's manufacturing year?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Manufacturing Year</mat-label>
+    <input matInput [(ngModel)]="data.manufacturingYear">
+  </mat-form-field>
+  <p>What's the car category?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Category</mat-label>
+    <input matInput [(ngModel)]="data.category">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="saveCar()">Save</button>
+</div>

@@ -71,18 +71,7 @@ export class CarManagementComponent {
       })
   }
 
-  addCar(): void {
-    const name = window.prompt("What name?")
-    const type = window.prompt("What type?")
-    const category = window.prompt("Which category?")
-    const manufacturingYear = window.prompt("Which year?")
-    const car = {
-      name,
-      type,
-      category,
-      manufacturingYear
-    }
-
+  addCar(car: any): void {
     this.carService.addCar(car)
       .subscribe(() => {
         this.loadCars();

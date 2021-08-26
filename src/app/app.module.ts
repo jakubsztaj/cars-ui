@@ -26,6 +26,8 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { RenterDialogContentComponent } from './main/renter-management/renter-dialog/renter-dialog-content/renter-dialog-content.component';
 import { RenterDialogComponent } from "./main/renter-management/renter-dialog/renter-dialog.component";
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from "@angular/material/dialog";
+import { CarDialogContentComponent } from './main/car-management/car-dialog/car-dialog-content/car-dialog-content.component';
+import { CarDialogComponent } from "./main/car-management/car-dialog/car-dialog.component";
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from "@angular/materia
     RentalManagementComponent,
     RenterManagementComponent,
     RenterDialogComponent,
-    RenterDialogContentComponent
+    RenterDialogContentComponent,
+    CarDialogComponent,
+    CarDialogContentComponent
   ],
   imports: [
     BrowserModule,

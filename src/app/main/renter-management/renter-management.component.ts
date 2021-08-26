@@ -18,7 +18,6 @@ export class RenterManagementComponent {
   renters: any;
 
   addRenter(renter: any): void {
-    console.log(renter)
     this.renterService.addRenter(renter)
       .subscribe(() => {
         this.loadRenters();

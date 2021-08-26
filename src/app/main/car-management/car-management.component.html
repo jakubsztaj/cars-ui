@@ -15,12 +15,8 @@
          (input)="filterCarsByType($event.target)">
 </mat-form-field>
 
-<h2>Add Car</h2>
-<button (click)="addCar()">
-  <mat-icon>plus_one</mat-icon>
-</button>
-
 <div>
+  <app-car-dialog (newItemEvent1)="addCar($event)"></app-car-dialog>
   <table mat-table [dataSource]="cars" style="width:100%">
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Name</th>

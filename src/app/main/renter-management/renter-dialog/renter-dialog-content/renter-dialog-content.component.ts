@@ -1,13 +1,12 @@
 import { Component, Inject, Injectable } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
-import { RenterManagementComponent } from "../../renter-management.component";
 
 @Component({
   selector: 'app-renter-dialog-content',
   templateUrl: './renter-dialog-content.component.html',
   styleUrls: ['./renter-dialog-content.component.css']
 })
-@Injectable({   providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class RenterDialogContentComponent {
 
   constructor(
@@ -18,8 +17,8 @@ export class RenterDialogContentComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
-  saveRenter(): void {
 
+  saveRenter(): void {
     this.dialogRef.close(this.data);
   }
 
