@@ -7,16 +7,13 @@ import { CarService } from "../../service/car.service";
   styleUrls: ['./car-management.component.css']
 })
 export class CarManagementComponent {
-
   constructor(carService: CarService) {
     this.carService = carService;
     this.loadCars();
   }
 
-
   displayedColumns: string[] = ['name', 'type', 'plates', 'vin', 'manufacturingYear',
     'category', 'rented', 'started', 'lastRentalDate', 'bringBackDate', 'date', 'menu'];
-
   carService: CarService;
   cars: any;
 
@@ -76,7 +73,6 @@ export class CarManagementComponent {
       .subscribe(() => {
         this.loadCars();
       })
-
   }
 
   filterCarsByName(input: any): void {
@@ -89,7 +85,6 @@ export class CarManagementComponent {
     } else {
       this.loadCars();
     }
-
   }
 
   filterCarsByVin(input: any): void {
@@ -102,7 +97,6 @@ export class CarManagementComponent {
     } else {
       this.loadCars();
     }
-
   }
 
   filterCarsByType(input: any): void {
@@ -115,7 +109,6 @@ export class CarManagementComponent {
     } else {
       this.loadCars();
     }
-
   }
 
   onDateChange(input: any): void {

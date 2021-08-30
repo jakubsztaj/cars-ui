@@ -28,6 +28,8 @@ import { RenterDialogComponent } from "./main/renter-management/renter-dialog/re
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from "@angular/material/dialog";
 import { CarDialogContentComponent } from './main/car-management/car-dialog/car-dialog-content/car-dialog-content.component';
 import { CarDialogComponent } from "./main/car-management/car-dialog/car-dialog.component";
+import { StatisticsComponent } from './main/statistics/statistics.component';
+import { MatStepperModule } from "@angular/material/stepper";
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { CarDialogComponent } from "./main/car-management/car-dialog/car-dialog.
     RenterDialogComponent,
     RenterDialogContentComponent,
     CarDialogComponent,
-    CarDialogContentComponent
+    CarDialogContentComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
@@ -63,9 +66,10 @@ import { CarDialogComponent } from "./main/car-management/car-dialog/car-dialog.
     MatListModule,
     MatSidenavModule,
     MatProgressSpinnerModule,
-    FormsModule
+    FormsModule,
+    MatStepperModule
   ],
-  providers: [{ provide: MatDialogRef, useValue: {} },{ provide: MAT_DIALOG_DATA, useValue: {} }],
+  providers: [{provide: MatDialogRef, useValue: {}}, {provide: MAT_DIALOG_DATA, useValue: {}}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

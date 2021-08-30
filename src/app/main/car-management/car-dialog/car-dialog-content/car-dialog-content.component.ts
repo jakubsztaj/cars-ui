@@ -7,7 +7,6 @@ import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
   styleUrls: ['./car-dialog-content.component.css']
 })
 export class CarDialogContentComponent {
-
   constructor(
     public dialogRef: MatDialogRef<CarDialogContentComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {

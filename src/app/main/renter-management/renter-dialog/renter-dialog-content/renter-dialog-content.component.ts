@@ -8,7 +8,6 @@ import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 })
 @Injectable({providedIn: 'root'})
 export class RenterDialogContentComponent {
-
   constructor(
     public dialogRef: MatDialogRef<RenterDialogContentComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
@@ -21,5 +20,4 @@ export class RenterDialogContentComponent {
   saveRenter(): void {
     this.dialogRef.close(this.data);
   }
-
 }

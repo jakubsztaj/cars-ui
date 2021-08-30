@@ -22,7 +22,6 @@ export class RenterManagementComponent {
       .subscribe(() => {
         this.loadRenters();
       })
-
   }
 
   loadRenters(): void {

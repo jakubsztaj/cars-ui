@@ -6,13 +6,13 @@ import { Observable } from "rxjs";
   providedIn: 'root'
 })
 export class RenterService {
-
   client: HttpClient;
   url = 'http://localhost:8080/renters';
 
   constructor(private http: HttpClient) {
     this.client = http;
   }
+
   addRenter(renter: any): Observable<any> {
     return this.http.post <any>(`${this.url}/add`, renter);
   }

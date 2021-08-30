@@ -6,7 +6,6 @@ import { Observable } from "rxjs";
   providedIn: 'root'
 })
 export class RentalService {
-
   client: HttpClient;
   url = 'http://localhost:8080/rentals/';
 

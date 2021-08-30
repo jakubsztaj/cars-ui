@@ -5,12 +5,14 @@ import { MainAppComponent } from "../main/main-app/main-app.component";
 import { CarManagementComponent } from "../main/car-management/car-management.component";
 import { RentalManagementComponent } from "../main/rental-management/rental-management.component";
 import { RenterManagementComponent } from "../main/renter-management/renter-management.component";
+import { StatisticsComponent } from "../main/statistics/statistics.component";
 
 const routes: Routes = [
   {path: 'home', component: MainAppComponent},
   {path: 'cars', component: CarManagementComponent},
   {path: 'rentals', component: RentalManagementComponent},
   {path: 'renters', component: RenterManagementComponent},
+  {path: 'stats', component: StatisticsComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 

@@ -9,7 +9,6 @@ import { RenterService } from "../../../service/renter.service";
   styleUrls: ['./renter-dialog.component.css']
 })
 export class RenterDialogComponent {
-
   @Output()
   newItemEvent = new EventEmitter<any>();
 

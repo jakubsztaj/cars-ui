@@ -5,7 +5,6 @@ import { Observable } from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
-
 export class CarService {
   client: HttpClient;
   url = 'http://localhost:8080/cars/';
@@ -16,17 +15,14 @@ export class CarService {
 
   loadCars(): Observable<any> {
     return this.http.get<any>(this.url);
-
   }
 
   deleteCars(): Observable<any> {
     return this.http.delete <any>(`${this.url}/delete`);
-
   }
 
   rentCar(vin: string): Observable<any> {
     return this.http.post <any>(`${this.url}/car/rent/${vin}`, {});
-
   }
 
   bringBackCar(vin: string): Observable<any> {
@@ -49,10 +45,8 @@ export class CarService {
     return this.http.post <any>(`${this.url}/add`, car);
   }
 
-
   filterCarsByVin(input: any): Observable<any> {
     return this.http.get <any>(`${this.url}/vin/${input}`)
-
   }
 
   filterCarsByName(input: any): Observable<any> {

@@ -7,14 +7,12 @@ import { RentalService } from "../../service/rental.service";
   styleUrls: ['./rental-management.component.css']
 })
 export class RentalManagementComponent {
-
   constructor(rentalService: RentalService) {
     this.rentalService = rentalService;
     this.loadRentals();
   }
 
   displayedColumns: string[] = ['vin', 'firstName', 'lastName', 'pesel', 'rentalBegin', 'rentalEnd'];
-
   rentalService: RentalService;
   rentals: any;
 
@@ -23,7 +21,6 @@ export class RentalManagementComponent {
       .subscribe(data => {
         this.rentals = data;
       })
-
   }
 
   deleteRentals(): void {
@@ -31,6 +28,5 @@ export class RentalManagementComponent {
       .subscribe(() => {
         this.loadRentals();
       })
-
   }
 }
