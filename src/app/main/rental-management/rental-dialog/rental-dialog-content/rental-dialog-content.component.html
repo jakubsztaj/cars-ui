@@ -1,0 +1,22 @@
+<h4>Choose car by vin</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Vin</mat-label>
+  <mat-select [(ngModel)]="this.vin">
+    <mat-option *ngFor="let car of cars" [value]="car.vin">
+      {{car.vin}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<h4>Choose renter by pesel</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Renter Pesel</mat-label>
+  <mat-select [(ngModel)]="this.pesel">
+    <mat-option *ngFor="let renter of renters" [value]="renter.pesel">
+      {{renter.pesel}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="saveRental()">Save</button>
+</div>

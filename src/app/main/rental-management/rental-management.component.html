@@ -1,8 +1,5 @@
 <div>
-  <h2>Add Rental</h2>
-  <button (click)="deleteRentals()">
-    <mat-icon>plus_one</mat-icon>
-  </button>
+  <app-rental-dialog (newItemEvent) ="createRentals($event)"></app-rental-dialog>
   <table mat-table [dataSource]="rentals" style="width:100%">
     <ng-container matColumnDef="vin">
       <th mat-header-cell *matHeaderCellDef> Vin</th>
@@ -36,35 +33,3 @@
     <mat-icon>delete</mat-icon>
   </button>
 </div>
-<mat-stepper labelPosition="bottom" #stepper>
-  <mat-step>
-      <ng-template matStepLabel></ng-template>
-      <mat-form-field appearance="fill">
-        <mat-label>Vin</mat-label>
-        <input matInput placeholder="Vin" formControlName="firstCtrl" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-  </mat-step>
-  <mat-step>
-      <ng-template matStepLabel></ng-template>
-      <mat-form-field appearance="fill">
-        <mat-label></mat-label>
-        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-               required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
-  </mat-step>
-</mat-stepper>

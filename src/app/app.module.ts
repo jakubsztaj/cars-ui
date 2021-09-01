@@ -30,6 +30,9 @@ import { CarDialogContentComponent } from './main/car-management/car-dialog/car-
 import { CarDialogComponent } from "./main/car-management/car-dialog/car-dialog.component";
 import { StatisticsComponent } from './main/statistics/statistics.component';
 import { MatStepperModule } from "@angular/material/stepper";
+import { RentalDialogComponent } from './main/rental-management/rental-dialog/rental-dialog.component';
+import { RentalDialogContentComponent } from "./main/rental-management/rental-dialog/rental-dialog-content/rental-dialog-content.component";
+import { MatSelectModule } from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -42,7 +45,9 @@ import { MatStepperModule } from "@angular/material/stepper";
     RenterDialogContentComponent,
     CarDialogComponent,
     CarDialogContentComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    RentalDialogComponent,
+    RentalDialogContentComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +72,8 @@ import { MatStepperModule } from "@angular/material/stepper";
     MatSidenavModule,
     MatProgressSpinnerModule,
     FormsModule,
-    MatStepperModule
+    MatStepperModule,
+    MatSelectModule
   ],
   providers: [{provide: MatDialogRef, useValue: {}}, {provide: MAT_DIALOG_DATA, useValue: {}}],
   bootstrap: [AppComponent]

@@ -114,4 +114,11 @@ export class CarManagementComponent {
   onDateChange(input: any): void {
     console.log(input.value);
   }
+
+  countStartedCars(): void {
+    this.carService.countStartedCars()
+      .subscribe(() => {
+
+      })
+  }
 }

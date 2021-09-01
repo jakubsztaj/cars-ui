@@ -12,7 +12,7 @@ export class RentalManagementComponent {
     this.loadRentals();
   }
 
-  displayedColumns: string[] = ['vin', 'firstName', 'lastName', 'pesel', 'rentalBegin', 'rentalEnd'];
+  displayedColumns: string[] = ['vin', 'firstName', 'lastName', 'pesel', 'rentalBegin', 'rentalEnd',];
   rentalService: RentalService;
   rentals: any;
 
@@ -28,5 +28,11 @@ export class RentalManagementComponent {
       .subscribe(() => {
         this.loadRentals();
       })
+  }
+  createRentals(rental: any): void {
+    this.rentalService.createRentals(rental)
+      .subscribe(()=> {
+      this.loadRentals();
+    })
   }
 }

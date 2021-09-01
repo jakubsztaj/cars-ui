@@ -18,6 +18,10 @@ export class RentalService {
   }
 
   deleteRentals(): Observable<any> {
-    return this.http.delete <any>(`${this.url}/delete`);
+    return this.http.delete<any>(`${this.url}/delete`);
+  }
+
+  createRentals(rental: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/add`, rental)
   }
 }

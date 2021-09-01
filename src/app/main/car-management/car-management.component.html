@@ -15,6 +15,11 @@
          (input)="filterCarsByType($event.target)">
 </mat-form-field>
 
+
+<h2>Started cars</h2>
+<button (click)="countStartedCars()">
+  <mat-icon>plus_one</mat-icon>
+</button>
 <div>
   <app-car-dialog (newItemEvent1)="addCar($event)"></app-car-dialog>
   <table mat-table [dataSource]="cars" style="width:100%">
