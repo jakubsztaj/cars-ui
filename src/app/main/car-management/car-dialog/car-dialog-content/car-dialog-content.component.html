@@ -1,12 +1,12 @@
 <mat-divider></mat-divider>
 <h1 mat-dialog-title>Car</h1>
 <div mat-dialog-content>
-  <p>What's the car type?</p>
+  <p>What's the car name?</p>
   <mat-form-field appearance="fill">
     <mat-label>Name</mat-label>
     <input matInput [(ngModel)]="data.name">
   </mat-form-field>
-  <p>What's the car's name?</p>
+  <p>What's the car's type?</p>
   <mat-form-field appearance="fill">
     <mat-label>Type</mat-label>
     <input matInput [(ngModel)]="data.type">
@@ -16,10 +16,25 @@
     <mat-label>Manufacturing Year</mat-label>
     <input matInput [(ngModel)]="data.manufacturingYear">
   </mat-form-field>
-  <p>What's the car category?</p>
+  <p>What's the car segment?</p>
   <mat-form-field appearance="fill">
-    <mat-label>Category</mat-label>
-    <input matInput [(ngModel)]="data.category">
+    <mat-label>Segment</mat-label>
+    <input matInput [(ngModel)]="data.segment">
+  </mat-form-field>
+  <p>What's the transmission? Manual/Automatic</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Transmission</mat-label>
+    <input matInput [(ngModel)]="data.transmission">
+  </mat-form-field>
+  <p>What's the fuel type? Petrol/Diesel</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Fuel Type</mat-label>
+    <input matInput [(ngModel)]="data.fuelType">
+  </mat-form-field>
+  <p>What's the drive? AWD/FWD/RWD/4x4</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Drive Type</mat-label>
+    <input matInput [(ngModel)]="data.typeOfDrive">
   </mat-form-field>
 </div>
 <div mat-dialog-actions>

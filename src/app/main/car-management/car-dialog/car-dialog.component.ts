@@ -22,7 +22,10 @@ export class CarDialogComponent {
         type: "",
         name: "",
         manufacturingYear: "",
-        category: ""
+        segment: "",
+        transmission: "",
+        fuelType: "",
+        typeOfDrive: ""
       }
     });
     dialogRef1.afterClosed().subscribe(formData1 => {

@@ -1,6 +1,6 @@
-import { Component, Inject, Injectable } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
-import { RentalService } from "../../../../service/rental.service";
+import {Component, Inject, Injectable} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {RentalService} from "../../../../service/rental.service";
 
 @Component({
   selector: 'app-rental-dialog-content',
@@ -20,12 +20,18 @@ export class RentalDialogContentComponent {
     data.renters.subscribe((renters: any) => {
       this.renters = renters
     })
+    data.rentals.subscribe((rentals: any) => {
+      this.rentals = rentals
+    })
   }
 
   renters: any;
   cars: any;
+  rentals: any;
   pesel = "";
   vin = "";
+  pricePerDay = "";
+  deposit = "";
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -35,6 +41,7 @@ export class RentalDialogContentComponent {
     const rentalDto = {
       vin: this.vin,
       pesel: this.pesel,
+      pricePerDay: this.pricePerDay
     }
     this.dialogRef.close(rentalDto);
   }

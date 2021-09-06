@@ -1,9 +1,9 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { MatDialog } from "@angular/material/dialog";
-import { RentalService } from "../../../service/rental.service";
-import { RentalDialogContentComponent } from "./rental-dialog-content/rental-dialog-content.component";
-import { RenterService } from "../../../service/renter.service";
-import { CarService } from "../../../service/car.service";
+import {Component, EventEmitter, Output} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {RentalService} from "../../../service/rental.service";
+import {RentalDialogContentComponent} from "./rental-dialog-content/rental-dialog-content.component";
+import {RenterService} from "../../../service/renter.service";
+import {CarService} from "../../../service/car.service";
 
 @Component({
   selector: 'app-rental-dialog',
@@ -22,7 +22,8 @@ export class RentalDialogComponent {
       width: '250px',
       data: {
         cars: this.carService.loadCars(),
-        renters: this.renterService.loadRenters()
+        renters: this.renterService.loadRenters(),
+        rentals: this.rentalService.loadRentals()
       }
     });
     dialogRef.afterClosed().subscribe(formData => {

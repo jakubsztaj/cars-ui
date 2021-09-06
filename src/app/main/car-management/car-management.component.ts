@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CarService } from "../../service/car.service";
+import {Component} from '@angular/core';
+import {CarService} from "../../service/car.service";
 
 @Component({
   selector: 'app-car-management',
@@ -13,7 +13,7 @@ export class CarManagementComponent {
   }
 
   displayedColumns: string[] = ['name', 'type', 'plates', 'vin', 'manufacturingYear',
-    'category', 'rented', 'started', 'lastRentalDate', 'bringBackDate', 'date', 'menu'];
+    'segment', 'transmission', 'fuelType', 'typeOfDrive', 'rented', 'started', 'lastRentalDate', 'bringBackDate', 'date', 'menu'];
   carService: CarService;
   cars: any;
 
@@ -115,10 +115,4 @@ export class CarManagementComponent {
     console.log(input.value);
   }
 
-  countStartedCars(): void {
-    this.carService.countStartedCars()
-      .subscribe(() => {
-
-      })
-  }
 }

@@ -1,5 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RentalDialogContentComponent } from './rental-dialog-content.component';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {RentalDialogContentComponent} from './rental-dialog-content.component';
 
 describe('RentalDialogContentComponent', () => {
   let component: RentalDialogContentComponent;

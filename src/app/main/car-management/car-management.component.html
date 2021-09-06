@@ -15,11 +15,6 @@
          (input)="filterCarsByType($event.target)">
 </mat-form-field>
 
-
-<h2>Started cars</h2>
-<button (click)="countStartedCars()">
-  <mat-icon>plus_one</mat-icon>
-</button>
 <div>
   <app-car-dialog (newItemEvent1)="addCar($event)"></app-car-dialog>
   <table mat-table [dataSource]="cars" style="width:100%">
@@ -43,9 +38,21 @@
       <th mat-header-cell *matHeaderCellDef> Manufacturing Year</th>
       <td mat-cell *matCellDef="let element"> {{element.manufacturingYear}} </td>
     </ng-container>
-    <ng-container matColumnDef="category">
-      <th mat-header-cell *matHeaderCellDef> Category</th>
-      <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+    <ng-container matColumnDef="segment">
+      <th mat-header-cell *matHeaderCellDef> Segment</th>
+      <td mat-cell *matCellDef="let element"> {{element.segment}} </td>
+    </ng-container>
+    <ng-container matColumnDef="transmission">
+      <th mat-header-cell *matHeaderCellDef> Transmission</th>
+      <td mat-cell *matCellDef="let element"> {{element.transmission ? "manual" : "automatic"}} </td>
+    </ng-container>
+    <ng-container matColumnDef="fuelType">
+      <th mat-header-cell *matHeaderCellDef> FuelType</th>
+      <td mat-cell *matCellDef="let element"> {{element.fuelType}} </td>
+    </ng-container>
+    <ng-container matColumnDef="typeOfDrive">
+      <th mat-header-cell *matHeaderCellDef> Drive</th>
+      <td mat-cell *matCellDef="let element"> {{element.typeOfDrive}} </td>
     </ng-container>
     <ng-container matColumnDef="rented">
       <th mat-header-cell *matHeaderCellDef> Rented</th>

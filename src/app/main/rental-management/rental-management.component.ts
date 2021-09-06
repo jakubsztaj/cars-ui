@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RentalService } from "../../service/rental.service";
+import {Component} from '@angular/core';
+import {RentalService} from "../../service/rental.service";
 
 @Component({
   selector: 'app-rental-management',
@@ -12,7 +12,7 @@ export class RentalManagementComponent {
     this.loadRentals();
   }
 
-  displayedColumns: string[] = ['vin', 'firstName', 'lastName', 'pesel', 'rentalBegin', 'rentalEnd',];
+  displayedColumns: string[] = ['vin', 'firstName', 'lastName', 'pesel', 'rentalBegin', 'rentalEnd', 'pricePerDay', 'deposit'];
   rentalService: RentalService;
   rentals: any;
 
@@ -29,10 +29,11 @@ export class RentalManagementComponent {
         this.loadRentals();
       })
   }
+
   createRentals(rental: any): void {
     this.rentalService.createRentals(rental)
-      .subscribe(()=> {
-      this.loadRentals();
-    })
+      .subscribe(() => {
+        this.loadRentals();
+      })
   }
 }

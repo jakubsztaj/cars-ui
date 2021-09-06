@@ -1,5 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RentalManagementComponent } from './rental-management.component';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {RentalManagementComponent} from './rental-management.component';
 
 describe('RentalManagementComponent', () => {
   let component: RentalManagementComponent;

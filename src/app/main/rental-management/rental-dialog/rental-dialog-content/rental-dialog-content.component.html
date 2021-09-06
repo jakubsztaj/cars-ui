@@ -16,6 +16,15 @@
     </mat-option>
   </mat-select>
 </mat-form-field>
+<h4>Choose car's price per day </h4>
+<mat-form-field appearance="fill">
+  <mat-label>Price per day</mat-label>
+  <mat-select [(ngModel)]="this.pricePerDay">
+    <mat-option *ngFor="let rental of rentals" [value]="rental.pricePerDay">
+      {{rental.pricePerDay}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Cancel</button>
   <button mat-button (click)="saveRental()">Save</button>

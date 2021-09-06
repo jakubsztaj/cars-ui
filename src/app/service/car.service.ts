@@ -57,7 +57,4 @@ export class CarService {
     return this.http.get <any>(`${this.url}/type/${input}`);
   }
 
-  countStartedCars(): Observable<any> {
-    return this.http.get <any>(`${this.url}/count/started`)
-  }
 }
