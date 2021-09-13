@@ -44,7 +44,7 @@
     </ng-container>
     <ng-container matColumnDef="transmission">
       <th mat-header-cell *matHeaderCellDef> Transmission</th>
-      <td mat-cell *matCellDef="let element"> {{element.transmission ? "manual" : "automatic"}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.transmission}} </td>
     </ng-container>
     <ng-container matColumnDef="fuelType">
       <th mat-header-cell *matHeaderCellDef> FuelType</th>
@@ -53,6 +53,22 @@
     <ng-container matColumnDef="typeOfDrive">
       <th mat-header-cell *matHeaderCellDef> Drive</th>
       <td mat-cell *matCellDef="let element"> {{element.typeOfDrive}} </td>
+    </ng-container>
+    <ng-container matColumnDef="doors">
+      <th mat-header-cell *matHeaderCellDef> Doors</th>
+      <td mat-cell *matCellDef="let element"> {{element.doors}} </td>
+    </ng-container>
+    <ng-container matColumnDef="seats">
+      <th mat-header-cell *matHeaderCellDef> Seats</th>
+      <td mat-cell *matCellDef="let element"> {{element.seats}} </td>
+    </ng-container>
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price</th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+    <ng-container matColumnDef="mpg">
+      <th mat-header-cell *matHeaderCellDef> Mpg</th>
+      <td mat-cell *matCellDef="let element"> {{element.mpg}} </td>
     </ng-container>
     <ng-container matColumnDef="rented">
       <th mat-header-cell *matHeaderCellDef> Rented</th>

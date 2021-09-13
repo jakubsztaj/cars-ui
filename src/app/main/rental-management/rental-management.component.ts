@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {RentalService} from "../../service/rental.service";
+import {Rental} from "../../model/Rental";
 
 @Component({
   selector: 'app-rental-management',
@@ -12,7 +13,7 @@ export class RentalManagementComponent {
     this.loadRentals();
   }
 
-  displayedColumns: string[] = ['vin', 'firstName', 'lastName', 'pesel', 'rentalBegin', 'rentalEnd', 'pricePerDay', 'deposit'];
+  displayedColumns: string[] = ['vin', 'firstName', 'lastName', 'pesel', 'rentalBegin', 'rentalEnd', 'pricePerDay', 'deposit', 'location'];
   rentalService: RentalService;
   rentals: any;
 

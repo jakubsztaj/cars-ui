@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import {Rental} from "../model/Rental";
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,8 @@ export class RentalService {
     this.client = http;
   }
 
-  loadRentals(): Observable<any> {
-    return this.http.get<any>(this.url);
+  loadRentals(): Observable<Rental[]> {
+    return this.http.get<Rental[]>(this.url);
   }
 
   deleteRentals(): Observable<any> {

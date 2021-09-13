@@ -25,7 +25,8 @@ export class CarDialogComponent {
         segment: "",
         transmission: "",
         fuelType: "",
-        typeOfDrive: ""
+        typeOfDrive: "",
+        mpg: ""
       }
     });
     dialogRef1.afterClosed().subscribe(formData1 => {

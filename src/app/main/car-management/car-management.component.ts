@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {CarService} from "../../service/car.service";
+import {Car} from "../../model/Car";
 
 @Component({
   selector: 'app-car-management',
@@ -13,9 +14,9 @@ export class CarManagementComponent {
   }
 
   displayedColumns: string[] = ['name', 'type', 'plates', 'vin', 'manufacturingYear',
-    'segment', 'transmission', 'fuelType', 'typeOfDrive', 'rented', 'started', 'lastRentalDate', 'bringBackDate', 'date', 'menu'];
+    'segment', 'transmission', 'fuelType', 'typeOfDrive', 'doors', 'seats', 'price', 'mpg', 'rented', 'started', 'lastRentalDate', 'bringBackDate', 'date', 'menu'];
   carService: CarService;
-  cars: any;
+  cars: Car[] = [];
 
   loadCars(): void {
     this.carService.loadCars()

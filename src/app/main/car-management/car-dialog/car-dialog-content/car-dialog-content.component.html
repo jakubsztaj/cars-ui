@@ -16,25 +16,46 @@
     <mat-label>Manufacturing Year</mat-label>
     <input matInput [(ngModel)]="data.manufacturingYear">
   </mat-form-field>
-  <p>What's the car segment?</p>
+  <p>What's the car's mpg?</p>
   <mat-form-field appearance="fill">
-    <mat-label>Segment</mat-label>
-    <input matInput [(ngModel)]="data.segment">
+    <mat-label>MPG</mat-label>
+    <input matInput [(ngModel)]="data.mpg">
   </mat-form-field>
-  <p>What's the transmission? Manual/Automatic</p>
+  <p>What's the transmission? </p>
   <mat-form-field appearance="fill">
     <mat-label>Transmission</mat-label>
-    <input matInput [(ngModel)]="data.transmission">
+    <mat-select [(value)]="data.transmission">
+      <mat-option *ngFor="let transmission of transmissions" value = "{{transmission}}">
+        {{transmission}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
-  <p>What's the fuel type? Petrol/Diesel</p>
+  <p>What's the fuel type? </p>
   <mat-form-field appearance="fill">
-    <mat-label>Fuel Type</mat-label>
-    <input matInput [(ngModel)]="data.fuelType">
+    <mat-label>Fuel</mat-label>
+    <mat-select [(value)]="data.fuelType">
+      <mat-option *ngFor="let fuelType of fuelTypes" value = "{{fuelType}}">
+        {{fuelType}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
-  <p>What's the drive? AWD/FWD/RWD/4x4</p>
+  <p>What's the drive? </p>
   <mat-form-field appearance="fill">
     <mat-label>Drive Type</mat-label>
-    <input matInput [(ngModel)]="data.typeOfDrive">
+    <mat-select [(value)]="data.typeOfDrive">
+      <mat-option *ngFor="let typeOfDrive of typeOfDrives" value = "{{typeOfDrive}}">
+        {{typeOfDrive}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p>What's the price? </p>
+  <mat-form-field appearance="fill">
+    <mat-label>Price</mat-label>
+    <mat-select [(value)]="data.price">
+      <mat-option *ngFor="let price of prices" value = "{{price}}">
+        {{price}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
