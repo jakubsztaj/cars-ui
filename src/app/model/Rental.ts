@@ -3,9 +3,9 @@ export interface Rental {
 }
 
 export enum Location {
-  Piotrkow = "PIOTRKOW", Bogdanow = "BOGDANOW", Belchatow = "BELCHATOW"
+  Piotrkow = "PIOTRKOW", Bogdanow = "BOGDANOW", Belchatow = "BELCHATOW", Moszczenia = "MOSZCZENICA"
 }
 
 export const pickUpLocation = [
-  Location.Piotrkow, Location.Bogdanow, Location.Belchatow
+  Location.Piotrkow, Location.Bogdanow, Location.Belchatow, Location.Moszczenia
 ]

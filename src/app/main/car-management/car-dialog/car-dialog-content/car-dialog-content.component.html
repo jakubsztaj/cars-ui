@@ -48,14 +48,10 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <p>What's the price? </p>
+  <p>What's the price for 1 day? </p>
   <mat-form-field appearance="fill">
     <mat-label>Price</mat-label>
-    <mat-select [(value)]="data.price">
-      <mat-option *ngFor="let price of prices" value = "{{price}}">
-        {{price}}
-      </mat-option>
-    </mat-select>
+    <input matInput [(ngModel)]="data.price">
   </mat-form-field>
 </div>
 <div mat-dialog-actions>

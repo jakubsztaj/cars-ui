@@ -1,7 +1,7 @@
-import {Component, Inject, Injectable} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {RentalService} from "../../../../service/rental.service";
-import {pickUpLocation} from "../../../../model/Rental";
+import { Component, Inject, Injectable } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import { RentalService } from "../../../../service/rental.service";
+import { pickUpLocation } from "../../../../model/Rental";
 
 @Component({
   selector: 'app-rental-dialog-content',
@@ -31,8 +31,6 @@ export class RentalDialogContentComponent {
   rentals: any;
   pesel = "";
   vin = "";
-  price = "";
-  deposit = "";
   location = "";
 
   onNoClick(): void {
@@ -43,11 +41,11 @@ export class RentalDialogContentComponent {
     const rentalDto = {
       vin: this.vin,
       pesel: this.pesel,
-      price: this.price,
       location: this.location
     }
     this.dialogRef.close(rentalDto);
   }
+
   locations = pickUpLocation;
 }
 

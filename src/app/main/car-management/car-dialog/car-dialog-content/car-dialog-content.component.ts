@@ -4,8 +4,7 @@ import {
   availableFuelTypes,
   availableSegments,
   availableTransmissions,
-  availableTypeOfDrive,
-  priceList
+  availableTypeOfDrive
 } from "../../../../model/Car";
 
 @Component({
@@ -30,5 +29,4 @@ export class CarDialogContentComponent {
   segments = availableSegments;
   transmissions = availableTransmissions;
   typeOfDrives = availableTypeOfDrive;
-  prices = priceList;
 }

@@ -3,7 +3,6 @@ export interface Car {
   segment: Segment;
   transmission: Transmission;
   typeOfDrive: TypeOfDrive;
-  price: Price;
 }
 
 export enum FuelType {
@@ -23,11 +22,6 @@ export enum TypeOfDrive {
 
 }
 
-export enum Price {
-  SMALL = "SMALL", MEDIUM = "MEDIUM", LARGE = "LARGE", PRESTIGE = "PRESTIGE"
-}
-
-
 export const availableFuelTypes = [
   FuelType.Diesel, FuelType.Petrol, FuelType.LPG
 ]
@@ -42,8 +36,4 @@ export const availableTransmissions = [
 
 export const availableTypeOfDrive = [
   TypeOfDrive.AWD, TypeOfDrive.FWD, TypeOfDrive.RWD
-]
-
-export const priceList = [
-  Price.SMALL, Price.MEDIUM, Price.LARGE, Price.PRESTIGE
 ]

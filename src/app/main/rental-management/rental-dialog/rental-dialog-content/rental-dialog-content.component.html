@@ -19,7 +19,7 @@
 <p>What's the location? </p>
 <mat-form-field appearance="fill">
   <mat-label>Pick up location</mat-label>
-  <mat-select [(value)]="data.location">
+  <mat-select [(ngModel)]="this.location">
     <mat-option *ngFor="let location of locations" value = "{{location}}">
       {{location}}
     </mat-option>
