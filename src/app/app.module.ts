@@ -35,6 +35,8 @@ import { RentalDialogContentComponent } from "./main/rental-management/rental-di
 import { MatSelectModule } from "@angular/material/select";
 import { OwnerComponent } from './main/owner/owner.component';
 import { SupportComponent } from "./main/support/support.component";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 @NgModule({
   declarations: [
@@ -77,7 +79,9 @@ import { SupportComponent } from "./main/support/support.component";
     MatProgressSpinnerModule,
     FormsModule,
     MatStepperModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTabsModule,
+    MatCheckboxModule
   ],
   providers: [{provide: MatDialogRef, useValue: {}}, {provide: MAT_DIALOG_DATA, useValue: {}}],
   bootstrap: [AppComponent]
