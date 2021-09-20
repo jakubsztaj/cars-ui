@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {FormControl} from "@angular/forms";
+import { StatisticsService } from "../../service/statistics.service";
+import { Statistics } from "../../model/Statistics";
 
 @Component({
   selector: 'app-statistics',
@@ -7,19 +8,24 @@ import {FormControl} from "@angular/forms";
   styleUrls: ['./statistics.component.css']
 })
 export class StatisticsComponent {
-  tabs = ['Started cars: ', 'Rented cars: ', 'Our cars:','Current rentals:',"Renters that trusted us:"];
-  selected = new FormControl(0);
 
-  addTab(selectAfterAdding: boolean) {
-    this.tabs.push('New');
 
-    if (selectAfterAdding) {
-      this.selected.setValue(this.tabs.length - 1);
-    }
+  constructor(statisticsService: StatisticsService) {
+    this.statisticsService = statisticsService;
+    this.getStats();
   }
 
-  removeTab(index: number) {
-    this.tabs.splice(index, 1);
+  displayedColumns: string[] = ['name', 'value'];
+  statisticsService;
+  statistics: Statistics[] = [];
+
+  getStats(): void {
+    this.statisticsService.getAllStatistics()
+      .subscribe(data => {
+        this.statistics = data;
+      })
+
   }
+
 }
 

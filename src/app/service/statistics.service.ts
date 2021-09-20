@@ -1,6 +1,11 @@
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { Statistics } from "../model/Statistics";
+import { Injectable } from "@angular/core";
 
+@Injectable({
+  providedIn: 'root'
+})
 export class StatisticsService {
   client: HttpClient;
   url = 'http://localhost:8080/stats';
@@ -9,7 +14,7 @@ export class StatisticsService {
     this.client = http;
   }
 
-  count(stats: any): Observable<any> {
-    return this.http.post <any>(`${this.url}/count`, stats);
+  getAllStatistics(): Observable<Statistics[]> {
+    return this.http.get <Statistics[]>(`${this.url}/`);
   }
 }
