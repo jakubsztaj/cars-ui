@@ -13,7 +13,7 @@ export class RentalManagementComponent {
     this.loadRentals();
   }
 
-  displayedColumns: string[] = ['vin', 'firstName', 'lastName', 'pesel', 'rentalBegin', 'rentalEnd', 'pricePerDay', 'deposit', 'location'];
+  displayedColumns: string[] = ['vin', 'firstName', 'lastName', 'pesel', 'rentalBegin', 'rentalEnd', 'pricePerDay', 'deposit', 'location', 'rentalStatus'];
   rentalService: RentalService;
   rentals: any;
 

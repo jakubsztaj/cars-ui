@@ -33,7 +33,6 @@ import { MatStepperModule } from "@angular/material/stepper";
 import { RentalDialogComponent } from './main/rental-management/rental-dialog/rental-dialog.component';
 import { RentalDialogContentComponent } from "./main/rental-management/rental-dialog/rental-dialog-content/rental-dialog-content.component";
 import { MatSelectModule } from "@angular/material/select";
-import { OwnerComponent } from './main/owner/owner.component';
 import { SupportComponent } from "./main/support/support.component";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatCheckboxModule} from "@angular/material/checkbox";
@@ -52,8 +51,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     StatisticsComponent,
     RentalDialogComponent,
     RentalDialogContentComponent,
-    SupportComponent,
-    OwnerComponent
+    SupportComponent
   ],
   imports: [
     BrowserModule,

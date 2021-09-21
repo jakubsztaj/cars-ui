@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {CarService} from "../../service/car.service";
-import {Car} from "../../model/Car";
+import { Component } from '@angular/core';
+import { CarService } from "../../service/car.service";
+import { Car } from "../../model/Car";
 
 @Component({
   selector: 'app-car-management',
@@ -14,7 +14,7 @@ export class CarManagementComponent {
   }
 
   displayedColumns: string[] = ['name', 'type', 'plates', 'vin', 'manufacturingYear',
-    'segment', 'transmission', 'fuelType', 'typeOfDrive', 'doors', 'seats', 'price', 'mpg', 'rented', 'started', 'lastRentalDate', 'bringBackDate', 'date', 'menu'];
+    'segment', 'transmission', 'fuelType', 'typeOfDrive', 'doors', 'seats', 'price', 'mpg', 'carStatus', 'lastRentalDate', 'bringBackDate', 'date', 'menu'];
   carService: CarService;
   cars: Car[] = [];
 
@@ -43,20 +43,6 @@ export class CarManagementComponent {
 
   bringBackCar(vin: string): void {
     this.carService.bringBackCar(vin)
-      .subscribe(() => {
-        this.loadCars();
-      })
-  }
-
-  startCar(vin: string): void {
-    this.carService.startCar(vin)
-      .subscribe(() => {
-        this.loadCars();
-      })
-  }
-
-  stopCar(vin: string): void {
-    this.carService.stopCar(vin)
       .subscribe(() => {
         this.loadCars();
       })

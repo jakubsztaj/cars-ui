@@ -13,7 +13,7 @@ export class RenterManagementComponent {
     this.loadRenters();
   }
 
-  displayedColumns: string[] = ['firstName', 'lastName', 'pesel'];
+  displayedColumns: string[] = ['firstName', 'lastName', 'pesel', 'menu'];
   renterService: RenterService;
   renters: any;
 
@@ -33,6 +33,13 @@ export class RenterManagementComponent {
 
   deleteRenters(): void {
     this.renterService.deleteRenters()
+      .subscribe(() => {
+        this.loadRenters();
+      })
+  }
+
+  deleteRenter(pesel: string): void {
+    this.renterService.deleteRenter(pesel)
       .subscribe(() => {
         this.loadRenters();
       })

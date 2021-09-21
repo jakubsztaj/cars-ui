@@ -24,4 +24,8 @@ export class RenterService {
   deleteRenters(): Observable<any> {
     return this.http.delete <any>(`${this.url}/delete`);
   }
+
+  deleteRenter(pesel: string): Observable<any> {
+    return this.http.delete <any>(`${this.url}/delete/${pesel}`)
+  }
 }

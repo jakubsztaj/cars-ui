@@ -7,7 +7,6 @@ import { RentalManagementComponent } from "../main/rental-management/rental-mana
 import { RenterManagementComponent } from "../main/renter-management/renter-management.component";
 import { StatisticsComponent } from "../main/statistics/statistics.component";
 import { SupportComponent } from "../main/support/support.component";
-import { OwnerComponent } from "../main/owner/owner.component";
 
 const routes: Routes = [
   {path: 'home', component: MainAppComponent},
@@ -16,7 +15,6 @@ const routes: Routes = [
   {path: 'renters', component: RenterManagementComponent},
   {path: 'stats', component: StatisticsComponent},
   {path: 'support', component: SupportComponent},
-  {path: 'owners', component: OwnerComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 
