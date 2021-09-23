@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
-import {RentalService} from "../../service/rental.service";
-import {Rental} from "../../model/Rental";
+import { Component, Inject } from '@angular/core';
+import { RentalService } from "../../service/rental.service";
+import { paymentStatusUpdate} from "../../model/Rental";
+import { MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 @Component({
   selector: 'app-rental-management',
@@ -13,7 +14,8 @@ export class RentalManagementComponent {
     this.loadRentals();
   }
 
-  displayedColumns: string[] = ['vin', 'firstName', 'lastName', 'pesel', 'rentalBegin', 'rentalEnd', 'pricePerDay', 'deposit', 'location', 'rentalStatus'];
+  displayedColumns: string[] = ['vin', 'firstName', 'lastName', 'pesel', 'rentalBegin', 'rentalEnd', 'pricePerDay', 'deposit', 'location',
+    'rentalStatus', 'paymentStatus', 'menu1'];
   rentalService: RentalService;
   rentals: any;
 
@@ -37,4 +39,31 @@ export class RentalManagementComponent {
         this.loadRentals();
       })
   }
+
+  changeStatus(vin: string): void {
+    this.rentalService.changePaymentStatus(vin)
+      .subscribe(() => {
+        this.loadRentals()
+      })
+  }
+
+  filterByPaymentStatus(event: any): void {
+    this.rentalService.filterByStatus(event.value)
+      .subscribe((rentals) => {
+        this.rentals = rentals;
+      });
+  }
+  filterRentalByPaymentStatus(input: any): void {
+    const statusInput = input.value;
+    if (statusInput.length > 1) {
+      this.rentalService.filterByStatus(statusInput)
+        .subscribe((rentals) => {
+          this.rentals = rentals;
+        })
+    } else {
+      this.loadRentals();
+    }
+  }
+
+  paymentStatuses = paymentStatusUpdate;
 }

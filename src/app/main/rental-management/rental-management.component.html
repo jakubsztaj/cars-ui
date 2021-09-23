@@ -1,5 +1,20 @@
 <div>
   <app-rental-dialog (newItemEvent)="createRentals($event)"></app-rental-dialog>
+  <mat-form-field style="width: 200px; margin: 3px; display: block;">
+    <input type="text" matInput placeholder="Find Rental by Payment Status"
+           (input)="filterRentalByPaymentStatus($event.target)">
+  </mat-form-field>
+  <p>What's the Payment Status? </p>
+  <mat-form-field appearance="fill">
+    <mat-label>Payment Status</mat-label>
+    <mat-select (selectionChange)="filterByPaymentStatus($event)">
+      <mat-option *ngFor="let paymentStatus of paymentStatuses" value = "{{paymentStatus}}">
+        {{paymentStatus}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button (click)="loadRentals()">Load All Rentals</button>
   <table mat-table [dataSource]="rentals" style="width:100%">
     <ng-container matColumnDef="vin">
       <th mat-header-cell *matHeaderCellDef> Vin</th>
@@ -40,6 +55,21 @@
     <ng-container matColumnDef="rentalStatus">
       <th mat-header-cell *matHeaderCellDef> Status</th>
       <td mat-cell *matCellDef="let element"> {{element.rentalStatus}} </td>
+    </ng-container>
+    <ng-container matColumnDef="paymentStatus">
+      <th mat-header-cell *matHeaderCellDef> Payment Status</th>
+      <td mat-cell *matCellDef="let element"> {{element.paymentStatus}} </td>
+    </ng-container>
+    <ng-container matColumnDef="menu1">
+      <th mat-header-cell *matHeaderCellDef> Menu</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button [matMenuTriggerFor]="mainMenu">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #mainMenu overlapTrigger xPosition="after" yPosition="below">
+          <button (click)="changeStatus(element.car.vin)">Completed</button>
+        </mat-menu>
+      </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
