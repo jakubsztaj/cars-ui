@@ -21,7 +21,8 @@ export class RenterDialogComponent {
       data: {
         renterName: "",
         renterLastName: "",
-        renterPesel: "",
+        renterPlaceOfResidence: "",
+        renterPesel: ""
       }
     });
     dialogRef.afterClosed().subscribe(formData => {

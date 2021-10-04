@@ -36,6 +36,7 @@ import { MatSelectModule } from "@angular/material/select";
 import { SupportComponent } from "./main/support/support.component";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import {FilterManagementComponent} from "./main/filter-management/filter-management.component";
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     StatisticsComponent,
     RentalDialogComponent,
     RentalDialogContentComponent,
-    SupportComponent
+    SupportComponent,
+    FilterManagementComponent
   ],
   imports: [
     BrowserModule,

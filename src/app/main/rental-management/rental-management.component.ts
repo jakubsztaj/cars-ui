@@ -1,7 +1,6 @@
-import { Component, Inject } from '@angular/core';
-import { RentalService } from "../../service/rental.service";
-import { paymentStatusUpdate} from "../../model/Rental";
-import { MAT_DIALOG_DATA } from "@angular/material/dialog";
+import {Component} from '@angular/core';
+import {RentalService} from "../../service/rental.service";
+import {paymentStatusUpdate, Rental} from "../../model/Rental";
 
 @Component({
   selector: 'app-rental-management',
@@ -13,6 +12,7 @@ export class RentalManagementComponent {
     this.rentalService = rentalService;
     this.loadRentals();
   }
+
 
   displayedColumns: string[] = ['vin', 'firstName', 'lastName', 'pesel', 'rentalBegin', 'rentalEnd', 'pricePerDay', 'deposit', 'location',
     'rentalStatus', 'paymentStatus', 'menu1'];
