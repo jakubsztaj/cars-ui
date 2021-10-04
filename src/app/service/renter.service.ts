@@ -21,6 +21,10 @@ export class RenterService {
     return this.http.get<any>(this.url);
   }
 
+  loadRenter(pesel: string): Observable<any> {
+    return this.http.get<any>(`${this.url}/load/renter/${pesel}`);
+  }
+
   deleteRenters(): Observable<any> {
     return this.http.delete <any>(`${this.url}/delete`);
   }

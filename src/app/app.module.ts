@@ -37,6 +37,7 @@ import { SupportComponent } from "./main/support/support.component";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FilterManagementComponent} from "./main/filter-management/filter-management.component";
+import { RenterDialogPersonalDataComponent } from './main/renter-management/renter-dialog/renter-dialog-personal-data/renter-dialog-personal-data.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {FilterManagementComponent} from "./main/filter-management/filter-managem
     RentalDialogComponent,
     RentalDialogContentComponent,
     SupportComponent,
-    FilterManagementComponent
+    FilterManagementComponent,
+    RenterDialogPersonalDataComponent,
   ],
   imports: [
     BrowserModule,

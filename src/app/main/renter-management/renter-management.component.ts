@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { RenterService } from "../../service/renter.service";
+import { RenterDialogPersonalDataComponent } from "./renter-dialog/renter-dialog-personal-data/renter-dialog-personal-data.component";
+import { MatDialog } from "@angular/material/dialog";
 
 @Component({
   selector: 'app-renter-management',
@@ -7,13 +9,15 @@ import { RenterService } from "../../service/renter.service";
   styleUrls: ['./renter-management.component.css']
 })
 export class RenterManagementComponent {
+  @Output()
+  newItemEvent = new EventEmitter<any>();
 
-  constructor(renterService: RenterService) {
+  constructor(renterService: RenterService, public dialog: MatDialog) {
     this.renterService = renterService;
     this.loadRenters();
   }
 
-  displayedColumns: string[] = ['firstName', 'lastName','placeOfResidence', 'pesel','phoneNumber', 'menu'];
+  displayedColumns: string[] = ['pesel','menu'];
   renterService: RenterService;
   renters: any;
 
@@ -31,6 +35,13 @@ export class RenterManagementComponent {
       })
   }
 
+  loadRenter(pesel: string): void {
+    this.renterService.loadRenter(pesel)
+      .subscribe(data => {
+        this.renters = data;
+      })
+  }
+
   deleteRenters(): void {
     this.renterService.deleteRenters()
       .subscribe(() => {
@@ -43,5 +54,18 @@ export class RenterManagementComponent {
       .subscribe(() => {
         this.loadRenters();
       })
+  }
+
+  openDataDialog(pesel: string): void {
+    const dialogRef = this.dialog.open(RenterDialogPersonalDataComponent, {
+      height: '250px',
+      width: '800px',
+      data: {
+        renter: this.renterService.loadRenter(pesel)
+      }
+    });
+    dialogRef.afterClosed().subscribe(formData => {
+      this.newItemEvent.emit(formData);
+    })
   }
 }

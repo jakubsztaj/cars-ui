@@ -7,7 +7,7 @@ import { RentalManagementComponent } from "../main/rental-management/rental-mana
 import { RenterManagementComponent } from "../main/renter-management/renter-management.component";
 import { StatisticsComponent } from "../main/statistics/statistics.component";
 import { SupportComponent } from "../main/support/support.component";
-import {FilterManagementComponent} from "../main/filter-management/filter-management.component";
+import { FilterManagementComponent } from "../main/filter-management/filter-management.component";
 
 const routes: Routes = [
   {path: 'home', component: MainAppComponent},
