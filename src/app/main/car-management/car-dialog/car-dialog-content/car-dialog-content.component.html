@@ -1,0 +1,60 @@
+<mat-divider></mat-divider>
+<h1 mat-dialog-title>Car</h1>
+<div mat-dialog-content>
+  <p>What's the car name?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="data.name">
+  </mat-form-field>
+  <p>What's the car's type?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Type</mat-label>
+    <input matInput [(ngModel)]="data.type">
+  </mat-form-field>
+  <p>What's the car's manufacturing year?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Manufacturing Year</mat-label>
+    <input matInput [(ngModel)]="data.manufacturingYear">
+  </mat-form-field>
+  <p>What's the car's mpg?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>MPG</mat-label>
+    <input matInput [(ngModel)]="data.mpg">
+  </mat-form-field>
+  <p>What's the transmission? </p>
+  <mat-form-field appearance="fill">
+    <mat-label>Transmission</mat-label>
+    <mat-select [(value)]="data.transmission">
+      <mat-option *ngFor="let transmission of transmissions" value = "{{transmission}}">
+        {{transmission}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p>What's the fuel type? </p>
+  <mat-form-field appearance="fill">
+    <mat-label>Fuel</mat-label>
+    <mat-select [(value)]="data.fuelType">
+      <mat-option *ngFor="let fuelType of fuelTypes" value = "{{fuelType}}">
+        {{fuelType}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p>What's the drive? </p>
+  <mat-form-field appearance="fill">
+    <mat-label>Drive Type</mat-label>
+    <mat-select [(value)]="data.typeOfDrive">
+      <mat-option *ngFor="let typeOfDrive of typeOfDrives" value = "{{typeOfDrive}}">
+        {{typeOfDrive}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p>What's the price for 1 day? </p>
+  <mat-form-field appearance="fill">
+    <mat-label>Price</mat-label>
+    <input matInput [(ngModel)]="data.price">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="saveCar()">Save</button>
+</div>

@@ -1,0 +1,34 @@
+<mat-divider></mat-divider>
+<h1 mat-dialog-title>Renter</h1>
+<div mat-dialog-content>
+  <p>What's renter first name?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input matInput [(ngModel)]="data.renterName">
+  </mat-form-field>
+  <p>What's renter last name?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Last Name</mat-label>
+    <input matInput [(ngModel)]="data.renterLastName">
+  </mat-form-field>
+  <p>What's Renter place of residence?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Place Of Residence</mat-label>
+    <input matInput [(ngModel)]="data.renterPlaceOfResidence">
+  </mat-form-field>
+  <p>What's renter pesel?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Pesel</mat-label>
+    <input matInput [(ngModel)]="data.renterPesel">
+  </mat-form-field>
+  <p>What's renter contact number?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Phone Number</mat-label>
+    <input matInput [(ngModel)]="data.phoneNumber">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="saveRenter()">Save</button>
+</div>
+
