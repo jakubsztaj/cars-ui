@@ -1,1 +1,22 @@
-<p>filter-management works!</p>
+<h2>Find your car by car attributes</h2>
+
+<mat-form-field style="width: 200px; margin: 3px; display: block;">
+  <input type="text" matInput placeholder="Find your car by vin"
+         (input)="filterCarsByVin($event.target)">
+</mat-form-field>
+
+<mat-form-field style="width: 200px; margin: 3px; display: block;">
+  <input type="text" matInput placeholder="Find your car by name"
+         (input)="filterCarsByName($event.target)">
+</mat-form-field>
+
+<mat-form-field style="width: 200px; margin: 3px; display: block;">
+  <input type="text" matInput placeholder="Find your car by type"
+         (input)="filterCarsByType($event.target)">
+</mat-form-field>
+
+<h2>Find your car by rental feature</h2>
+<mat-form-field style="width: 200px; margin: 3px; display: block;">
+  <input type="text" matInput placeholder="Find Rental by Payment Status"
+         (input)="filterRentalByPaymentStatus($event.target)">
+</mat-form-field>

@@ -38,6 +38,7 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FilterManagementComponent} from "./main/filter-management/filter-management.component";
 import { RenterDialogPersonalDataComponent } from './main/renter-management/renter-dialog/renter-dialog-personal-data/renter-dialog-personal-data.component';
+import { CarDialogDataComponent } from "./main/car-management/car-dialog/car-dialog-data/car-dialog-data.component";
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { RenterDialogPersonalDataComponent } from './main/renter-management/rent
     SupportComponent,
     FilterManagementComponent,
     RenterDialogPersonalDataComponent,
+    CarDialogDataComponent
   ],
   imports: [
     BrowserModule,
