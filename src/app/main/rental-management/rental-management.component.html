@@ -60,6 +60,20 @@
       <th mat-header-cell *matHeaderCellDef> Payment Status</th>
       <td mat-cell *matCellDef="let element"> {{element.paymentStatus}} </td>
     </ng-container>
+    <ng-container matColumnDef="totalPayment">
+      <th mat-header-cell *matHeaderCellDef> Total Rental Price</th>
+      <td mat-cell *matCellDef="let element"> {{element.totalPayment}} </td>
+    </ng-container>
+    <ng-container matColumnDef="currentBalance">
+      <th mat-header-cell *matHeaderCellDef> Price paid</th>
+      <td mat-cell *matCellDef="let element"> {{element.currentBalance}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Bar">
+      <th mat-header-cell *matHeaderCellDef> Bar</th>
+      <td mat-cell *matCellDef="let element">
+      <mat-progress-bar mode="determinate" value="{{(element.currentBalance/element.totalPayment)*100}}"></mat-progress-bar>
+      </td>
+    </ng-container>
     <ng-container matColumnDef="menu1">
       <th mat-header-cell *matHeaderCellDef> Menu</th>
       <td mat-cell *matCellDef="let element">
@@ -68,6 +82,7 @@
         </button>
         <mat-menu #mainMenu overlapTrigger xPosition="after" yPosition="below">
           <button (click)="changeStatus(element.car.vin)">Completed</button>
+          <button (click)="openPaymentDialog(element.id)">Pay</button>
         </mat-menu>
       </td>
     </ng-container>

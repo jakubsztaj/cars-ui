@@ -39,6 +39,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FilterManagementComponent} from "./main/filter-management/filter-management.component";
 import { RenterDialogPersonalDataComponent } from './main/renter-management/renter-dialog/renter-dialog-personal-data/renter-dialog-personal-data.component';
 import { CarDialogDataComponent } from "./main/car-management/car-dialog/car-dialog-data/car-dialog-data.component";
+import { RentalPaymentDialogComponent } from './main/rental-management/rental-dialog/rental-payment-dialog/rental-payment-dialog.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { CarDialogDataComponent } from "./main/car-management/car-dialog/car-dia
     SupportComponent,
     FilterManagementComponent,
     RenterDialogPersonalDataComponent,
-    CarDialogDataComponent
+    CarDialogDataComponent,
+    RentalPaymentDialogComponent
   ],
   imports: [
     BrowserModule,

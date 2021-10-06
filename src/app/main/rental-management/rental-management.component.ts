@@ -1,6 +1,10 @@
-import {Component} from '@angular/core';
-import {RentalService} from "../../service/rental.service";
-import {paymentStatusUpdate, Rental} from "../../model/Rental";
+import { Component, EventEmitter, Output } from '@angular/core';
+import { RentalService } from "../../service/rental.service";
+import { paymentStatusUpdate, Rental } from "../../model/Rental";
+import { CarDialogContentComponent } from "../car-management/car-dialog/car-dialog-content/car-dialog-content.component";
+import { MatDialog } from "@angular/material/dialog";
+import { CarService } from "../../service/car.service";
+import { RentalPaymentDialogComponent } from "./rental-dialog/rental-payment-dialog/rental-payment-dialog.component";
 
 @Component({
   selector: 'app-rental-management',
@@ -8,16 +12,22 @@ import {paymentStatusUpdate, Rental} from "../../model/Rental";
   styleUrls: ['./rental-management.component.css']
 })
 export class RentalManagementComponent {
-  constructor(rentalService: RentalService) {
+  @Output()
+  newItemEvent1 = new EventEmitter<any>();
+
+  constructor(rentalService: RentalService, public dialog: MatDialog) {
     this.rentalService = rentalService;
     this.loadRentals();
   }
 
 
   displayedColumns: string[] = ['vin', 'firstName', 'lastName', 'pesel', 'rentalBegin', 'rentalEnd', 'pricePerDay', 'deposit', 'location',
-    'rentalStatus', 'paymentStatus', 'menu1'];
+    'rentalStatus', 'paymentStatus', 'totalPayment', 'currentBalance', 'Bar', 'menu1'];
   rentalService: RentalService;
   rentals: any;
+
+  paymentStatuses = paymentStatusUpdate;
+
 
   loadRentals(): void {
     this.rentalService.loadRentals()
@@ -40,6 +50,13 @@ export class RentalManagementComponent {
       })
   }
 
+  payForRental(rental: Rental, amount: number): void {
+    this.rentalService.paySpecificAmount(amount, rental.id)
+      .subscribe(() => {
+        this.loadRentals()
+      })
+  }
+
   changeStatus(vin: string): void {
     this.rentalService.changePaymentStatus(vin)
       .subscribe(() => {
@@ -53,6 +70,7 @@ export class RentalManagementComponent {
         this.rentals = rentals;
       });
   }
+
   filterRentalByPaymentStatus(input: any): void {
     const statusInput = input.value;
     if (statusInput.length > 1) {
@@ -65,5 +83,19 @@ export class RentalManagementComponent {
     }
   }
 
-  paymentStatuses = paymentStatusUpdate;
+  openPaymentDialog(rentalId: string): void {
+    const dialogRef = this.dialog.open(RentalPaymentDialogComponent, {
+      width: '250px',
+      data: {
+        rentalId
+      }
+    });
+    dialogRef.afterClosed().subscribe(formData => {
+      this.rentalService.paySpecificAmount(formData.amount, formData.rentalId)
+        .subscribe(() => {
+          this.loadRentals()
+        })
+    })
+  }
+
 }

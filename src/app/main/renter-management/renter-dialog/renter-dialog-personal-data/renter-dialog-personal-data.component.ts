@@ -1,5 +1,5 @@
-import { Component, Inject, Injectable} from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialog} from "@angular/material/dialog";
+import { Component, Inject, Injectable } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialog } from "@angular/material/dialog";
 import { RenterService } from "../../../../service/renter.service";
 
 @Component({
@@ -11,7 +11,6 @@ import { RenterService } from "../../../../service/renter.service";
 export class RenterDialogPersonalDataComponent {
 
   renter: any;
-
 
   constructor(renterService: RenterService, public dialog: MatDialog, @Inject(MAT_DIALOG_DATA) public data: any) {
     this.renterService = renterService;

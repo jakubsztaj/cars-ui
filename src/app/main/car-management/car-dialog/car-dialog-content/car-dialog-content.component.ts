@@ -1,5 +1,5 @@
-import {Component, Inject} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import {
   availableFuelTypes,
   availableSegments,
@@ -25,6 +25,7 @@ export class CarDialogContentComponent {
   saveCar(): void {
     this.dialogRef.close(this.data);
   }
+
   fuelTypes = availableFuelTypes;
   segments = availableSegments;
   transmissions = availableTransmissions;

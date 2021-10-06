@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Payment</h1>
+<div mat-dialog-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Pay</mat-label>
+        <input matInput [(ngModel)]="amount">
+      </mat-form-field>
+      <button (click)="payForRental(data.rentalId)">Pay</button>
+
+</div>

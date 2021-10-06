@@ -17,7 +17,7 @@ export class RenterManagementComponent {
     this.loadRenters();
   }
 
-  displayedColumns: string[] = ['pesel','menu'];
+  displayedColumns: string[] = ['pesel', 'menu'];
   renterService: RenterService;
   renters: any;
 

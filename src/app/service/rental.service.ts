@@ -29,10 +29,16 @@ export class RentalService {
   changePaymentStatus(vin: string): Observable<any> {
     return this.http.post<any>(`${this.url}/payment/completed/${vin}`, {});
   }
+
   filterByStatus(input: any): Observable<any> {
     return this.http.get <any>(`${this.url}/${input}`)
   }
+
   filterByPayment(paymentStatus: string): Observable<any> {
     return this.http.get <any>(`${this.url}/${paymentStatus}`)
+  }
+
+  paySpecificAmount(amount: number, rentalId: string): Observable<void> {
+    return this.http.post <void>(`${this.url}/payment/${rentalId}`, {amount})
   }
 }

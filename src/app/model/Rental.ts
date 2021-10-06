@@ -1,5 +1,6 @@
 export interface Rental {
   location: Location;
+  id: string;
 }
 
 export enum Location {
