@@ -40,6 +40,7 @@ import {FilterManagementComponent} from "./main/filter-management/filter-managem
 import { RenterDialogPersonalDataComponent } from './main/renter-management/renter-dialog/renter-dialog-personal-data/renter-dialog-personal-data.component';
 import { CarDialogDataComponent } from "./main/car-management/car-dialog/car-dialog-data/car-dialog-data.component";
 import { RentalPaymentDialogComponent } from './main/rental-management/rental-dialog/rental-payment-dialog/rental-payment-dialog.component';
+import {RentalDialogDataComponent} from "./main/rental-management/rental-dialog/rental-dialog-data/rental-dialog-data.component";
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { RentalPaymentDialogComponent } from './main/rental-management/rental-di
     FilterManagementComponent,
     RenterDialogPersonalDataComponent,
     CarDialogDataComponent,
-    RentalPaymentDialogComponent
+    RentalPaymentDialogComponent,
+    RentalDialogDataComponent
   ],
   imports: [
     BrowserModule,

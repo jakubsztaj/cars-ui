@@ -1,0 +1,32 @@
+<mat-divider></mat-divider>
+<h1 mat-dialog-title>Rental</h1>
+<div mat-dialog-personal-data>
+  <table mat-table [dataSource]="rental" style="width:100%">
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef> Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.renter.firstName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef> Last Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.renter.lastName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="placeOfResidence">
+      <th mat-header-cell *matHeaderCellDef> Place Of Residence</th>
+      <td mat-cell *matCellDef="let element"> {{element.renter.placeOfResidence}} </td>
+    </ng-container>
+    <ng-container matColumnDef="phoneNumber">
+      <th mat-header-cell *matHeaderCellDef> Phone Number</th>
+      <td mat-cell *matCellDef="let element"> {{element.renter.phoneNumber}} </td>
+    </ng-container>
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef> Location</th>
+      <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email</th>
+      <td mat-cell *matCellDef="let element"> {{element.renter.email}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

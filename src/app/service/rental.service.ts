@@ -41,4 +41,8 @@ export class RentalService {
   paySpecificAmount(amount: number, rentalId: string): Observable<void> {
     return this.http.post <void>(`${this.url}/payment/${rentalId}`, {amount})
   }
+
+  loadRental(vin: string): Observable<any> {
+    return this.http.get<any>(`${this.url}/load/rental/${vin}`);
+  }
 }

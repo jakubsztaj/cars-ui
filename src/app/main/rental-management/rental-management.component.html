@@ -20,14 +20,6 @@
       <th mat-header-cell *matHeaderCellDef> Vin</th>
       <td mat-cell *matCellDef="let element"> {{element.car.vin}} </td>
     </ng-container>
-    <ng-container matColumnDef="firstName">
-      <th mat-header-cell *matHeaderCellDef> Name</th>
-      <td mat-cell *matCellDef="let element"> {{element.renter.firstName}} </td>
-    </ng-container>
-    <ng-container matColumnDef="lastName">
-      <th mat-header-cell *matHeaderCellDef> Last Name</th>
-      <td mat-cell *matCellDef="let element"> {{element.renter.lastName}} </td>
-    </ng-container>
     <ng-container matColumnDef="pesel">
       <th mat-header-cell *matHeaderCellDef> Pesel</th>
       <td mat-cell *matCellDef="let element"> {{element.renter.pesel}} </td>
@@ -47,10 +39,6 @@
     <ng-container matColumnDef="deposit">
       <th mat-header-cell *matHeaderCellDef> Deposit</th>
       <td mat-cell *matCellDef="let element"> {{element.deposit}} </td>
-    </ng-container>
-    <ng-container matColumnDef="location">
-      <th mat-header-cell *matHeaderCellDef> Pick up Location</th>
-      <td mat-cell *matCellDef="let element"> {{element.location}} </td>
     </ng-container>
     <ng-container matColumnDef="rentalStatus">
       <th mat-header-cell *matHeaderCellDef> Status</th>
@@ -83,6 +71,9 @@
         <mat-menu #mainMenu overlapTrigger xPosition="after" yPosition="below">
           <button (click)="changeStatus(element.car.vin)">Completed</button>
           <button (click)="openPaymentDialog(element.id)">Pay</button>
+          <button (click)="openDataDialog(element.car.vin)">
+            <mat-icon>plus_one</mat-icon>
+          </button>
         </mat-menu>
       </td>
     </ng-container>
