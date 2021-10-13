@@ -8,6 +8,7 @@ import { RenterManagementComponent } from "../main/renter-management/renter-mana
 import { StatisticsComponent } from "../main/statistics/statistics.component";
 import { SupportComponent } from "../main/support/support.component";
 import { FilterManagementComponent } from "../main/filter-management/filter-management.component";
+import { ChatManagementComponent } from "../main/chat-management/chat-management.component";
 
 const routes: Routes = [
   {path: 'home', component: MainAppComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'renters', component: RenterManagementComponent},
   {path: 'stats', component: StatisticsComponent},
   {path: 'support', component: SupportComponent},
+  {path: 'message', component: ChatManagementComponent},
   {path: 'filter', component: FilterManagementComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];

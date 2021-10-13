@@ -41,6 +41,7 @@ import { RenterDialogPersonalDataComponent } from './main/renter-management/rent
 import { CarDialogDataComponent } from "./main/car-management/car-dialog/car-dialog-data/car-dialog-data.component";
 import { RentalPaymentDialogComponent } from './main/rental-management/rental-dialog/rental-payment-dialog/rental-payment-dialog.component';
 import {RentalDialogDataComponent} from "./main/rental-management/rental-dialog/rental-dialog-data/rental-dialog-data.component";
+import { ChatManagementComponent } from './main/chat-management/chat-management.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import {RentalDialogDataComponent} from "./main/rental-management/rental-dialog/
     RenterDialogPersonalDataComponent,
     CarDialogDataComponent,
     RentalPaymentDialogComponent,
-    RentalDialogDataComponent
+    RentalDialogDataComponent,
+    ChatManagementComponent
   ],
   imports: [
     BrowserModule,

@@ -1,21 +1,42 @@
-import { Injectable, OnDestroy } from "@angular/core";
+import { Injectable} from "@angular/core";
 import { WebSocketMessage } from "../model/WebSocketMessage";
 
 @Injectable({
   providedIn: 'root'
 })
-export class WebsocketService implements OnDestroy {
-  socket: WebSocket;
+export class WebSocketService {
+
+  webSocket: WebSocket;
+  chatMessages: WebSocketMessage[] = [];
+
 
   constructor() {
-    this.socket = new WebSocket('ws://localhost:8080/chat');
+    this.webSocket = new WebSocket('ws://localhost:8080/chat');
   }
 
-  ngOnDestroy(): void {
-    this.socket.close()
+  public openWebSocket() {
+    this.webSocket = new WebSocket('ws://localhost:8080/chat');
+
+    this.webSocket.onopen = (event) => {
+      console.log('Open: ', event)
+    }
+
+    this.webSocket.onmessage = (event) => {
+      const webSocketMessage = JSON.parse(event.data);
+      this.chatMessages.push(webSocketMessage);
+    }
+
+    this.webSocket.onclose = (event) => {
+      console.log("Close: ", event);
+    }
   }
 
-  sendMessage(message: WebSocketMessage): void {
-    this.socket.send(JSON.stringify(message));
+  public sendMessage(webSocketMessage: WebSocketMessage) {
+    this.webSocket.send(JSON.stringify(webSocketMessage));
   }
+
+  public closeWebSocket() {
+    this.webSocket.close()
+  }
+
 }
