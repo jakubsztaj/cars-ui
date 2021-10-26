@@ -32,4 +32,8 @@ export class RenterService {
   deleteRenter(pesel: string): Observable<any> {
     return this.http.delete <any>(`${this.url}/delete/${pesel}`)
   }
+
+  searchRenterByPhrase(input: any): Observable<any> {
+    return this.http.get <any>(`${this.url}/search/renter/${input}`);
+  }
 }

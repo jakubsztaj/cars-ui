@@ -68,4 +68,16 @@ export class RenterManagementComponent {
       this.newItemEvent.emit(formData);
     })
   }
+
+  searchRentersByPhrase(input: any): void {
+    const Input = input.value;
+    if (Input.length > 1) {
+      this.renterService.searchRenterByPhrase(Input)
+        .subscribe((renters) => {
+          this.renters = renters;
+        })
+    } else {
+      this.loadRenters();
+    }
+  }
 }

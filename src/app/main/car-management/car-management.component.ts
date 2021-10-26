@@ -117,4 +117,17 @@ export class CarManagementComponent {
       this.newItemEvent.emit(formData);
     })
   }
+
+  searchCarsByPhrase(input: any): void {
+    const Input = input.value;
+    if (Input.length > 1) {
+      this.carService.searchCarByPhrase(Input)
+        .subscribe((cars) => {
+          this.cars = cars;
+        })
+    } else {
+      this.loadCars();
+    }
+  }
+
 }

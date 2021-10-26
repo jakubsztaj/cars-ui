@@ -1,8 +1,9 @@
 <div>
   <app-rental-dialog (newItemEvent)="createRentals($event)"></app-rental-dialog>
   <mat-form-field style="width: 200px; margin: 3px; display: block;">
-    <input type="text" matInput placeholder="Find Rental by Payment Status"
-           (input)="filterRentalByPaymentStatus($event.target)">
+    <input type="text" matInput placeholder="Find rental "
+           (input)="searchRentalByPhrase($event.target)">
+
   </mat-form-field>
   <p>What's the Payment Status? </p>
   <mat-form-field appearance="fill">

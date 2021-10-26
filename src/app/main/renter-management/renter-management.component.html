@@ -1,4 +1,9 @@
 <div>
+  <mat-form-field style="width: 200px; margin: 3px; display: block;">
+    <input type="text" matInput placeholder="Find renter "
+           (input)="searchRentersByPhrase($event.target)">
+  </mat-form-field>
+
   <app-renter-dialog (newItemEvent)="addRenter($event)"></app-renter-dialog>
   <table mat-table [dataSource]="renters" style="width:100%">
     <ng-container matColumnDef="pesel">

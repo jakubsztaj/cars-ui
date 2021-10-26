@@ -110,4 +110,16 @@ export class RentalManagementComponent {
       this.newItemEvent.emit(formData);
     })
   }
+
+  searchRentalByPhrase(input: any): void {
+    const Input = input.value;
+    if (Input.length > 1) {
+      this.rentalService.searchRentalByPhrase(Input)
+        .subscribe((rentals) => {
+          this.rentals = rentals;
+        })
+    } else {
+      this.loadRentals();
+    }
+  }
 }

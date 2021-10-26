@@ -15,6 +15,12 @@
          (input)="filterCarsByType($event.target)">
 </mat-form-field>
 
+<mat-form-field style="width: 200px; margin: 3px; display: block;">
+  <input type="text" matInput placeholder="Find your car "
+         (input)="searchCarsByPhrase($event.target)">
+</mat-form-field>
+
+
 <div>
   <app-car-dialog (newItemEvent1)="addCar($event)"></app-car-dialog>
   <table mat-table [dataSource]="cars" style="width:100%">

@@ -45,4 +45,8 @@ export class RentalService {
   loadRental(vin: string): Observable<any> {
     return this.http.get<any>(`${this.url}/load/rental/${vin}`);
   }
+
+  searchRentalByPhrase(input: any): Observable<any> {
+    return this.http.get <any>(`${this.url}/search/rental/${input}`);
+  }
 }

@@ -61,4 +61,8 @@ export class CarService {
   loadCar(vin: string): Observable<any> {
     return this.http.get<any>(`${this.url}/load/car/${vin}`);
   }
+
+  searchCarByPhrase(input: any): Observable<any> {
+    return this.http.get <any>(`${this.url}/search/car/${input}`);
+  }
 }
