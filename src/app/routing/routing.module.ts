@@ -7,8 +7,8 @@ import { RentalManagementComponent } from "../main/rental-management/rental-mana
 import { RenterManagementComponent } from "../main/renter-management/renter-management.component";
 import { StatisticsComponent } from "../main/statistics/statistics.component";
 import { SupportComponent } from "../main/support/support.component";
-import { FilterManagementComponent } from "../main/filter-management/filter-management.component";
 import { ChatManagementComponent } from "../main/chat-management/chat-management.component";
+import { SearchManagementComponent } from "../main/search-management/search-management.component";
 
 const routes: Routes = [
   {path: 'home', component: MainAppComponent},
@@ -17,8 +17,8 @@ const routes: Routes = [
   {path: 'renters', component: RenterManagementComponent},
   {path: 'stats', component: StatisticsComponent},
   {path: 'support', component: SupportComponent},
+  {path: 'search', component: SearchManagementComponent},
   {path: 'message', component: ChatManagementComponent},
-  {path: 'filter', component: FilterManagementComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 

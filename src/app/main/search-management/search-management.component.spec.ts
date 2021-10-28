@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FilterManagementComponent } from './filter-management.component';
+import { SearchManagementComponent } from './search-management.component';
 
-describe('FilterManagementComponent', () => {
-  let component: FilterManagementComponent;
-  let fixture: ComponentFixture<FilterManagementComponent>;
+describe('SearchManagementComponent', () => {
+  let component: SearchManagementComponent;
+  let fixture: ComponentFixture<SearchManagementComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FilterManagementComponent ]
+      declarations: [ SearchManagementComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FilterManagementComponent);
+    fixture = TestBed.createComponent(SearchManagementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

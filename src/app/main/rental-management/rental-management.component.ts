@@ -1,12 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { RentalService } from "../../service/rental.service";
 import { paymentStatusUpdate, Rental } from "../../model/Rental";
-import { CarDialogContentComponent } from "../car-management/car-dialog/car-dialog-content/car-dialog-content.component";
 import { MatDialog } from "@angular/material/dialog";
-import { CarService } from "../../service/car.service";
 import { RentalPaymentDialogComponent } from "./rental-dialog/rental-payment-dialog/rental-payment-dialog.component";
-import {RenterDialogPersonalDataComponent} from "../renter-management/renter-dialog/renter-dialog-personal-data/renter-dialog-personal-data.component";
-import {RentalDialogDataComponent} from "./rental-dialog/rental-dialog-data/rental-dialog-data.component";
+import { RentalDialogDataComponent } from "./rental-dialog/rental-dialog-data/rental-dialog-data.component";
 
 @Component({
   selector: 'app-rental-management',
@@ -21,7 +18,6 @@ export class RentalManagementComponent {
     this.rentalService = rentalService;
     this.loadRentals();
   }
-
 
   displayedColumns: string[] = ['vin', 'pesel', 'rentalBegin', 'rentalEnd', 'pricePerDay', 'deposit', 'rentalStatus', 'paymentStatus', 'totalPayment', 'currentBalance', 'Bar', 'menu1'];
   rentalService: RentalService;
@@ -98,6 +94,7 @@ export class RentalManagementComponent {
         })
     })
   }
+
   openDataDialog(vin: string): void {
     const dialogRef = this.dialog.open(RentalDialogDataComponent, {
       height: '250px',

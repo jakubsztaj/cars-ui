@@ -34,14 +34,14 @@ import { RentalDialogComponent } from './main/rental-management/rental-dialog/re
 import { RentalDialogContentComponent } from "./main/rental-management/rental-dialog/rental-dialog-content/rental-dialog-content.component";
 import { MatSelectModule } from "@angular/material/select";
 import { SupportComponent } from "./main/support/support.component";
-import {MatTabsModule} from "@angular/material/tabs";
-import {MatCheckboxModule} from "@angular/material/checkbox";
-import {FilterManagementComponent} from "./main/filter-management/filter-management.component";
+import { MatTabsModule } from "@angular/material/tabs";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 import { RenterDialogPersonalDataComponent } from './main/renter-management/renter-dialog/renter-dialog-personal-data/renter-dialog-personal-data.component';
 import { CarDialogDataComponent } from "./main/car-management/car-dialog/car-dialog-data/car-dialog-data.component";
 import { RentalPaymentDialogComponent } from './main/rental-management/rental-dialog/rental-payment-dialog/rental-payment-dialog.component';
-import {RentalDialogDataComponent} from "./main/rental-management/rental-dialog/rental-dialog-data/rental-dialog-data.component";
+import { RentalDialogDataComponent } from "./main/rental-management/rental-dialog/rental-dialog-data/rental-dialog-data.component";
 import { ChatManagementComponent } from './main/chat-management/chat-management.component';
+import { SearchManagementComponent } from './main/search-management/search-management.component';
 
 @NgModule({
   declarations: [
@@ -58,12 +58,12 @@ import { ChatManagementComponent } from './main/chat-management/chat-management.
     RentalDialogComponent,
     RentalDialogContentComponent,
     SupportComponent,
-    FilterManagementComponent,
     RenterDialogPersonalDataComponent,
     CarDialogDataComponent,
     RentalPaymentDialogComponent,
     RentalDialogDataComponent,
-    ChatManagementComponent
+    ChatManagementComponent,
+    SearchManagementComponent
   ],
   imports: [
     BrowserModule,
