@@ -15,7 +15,7 @@ export class StatisticsComponent {
     this.getStats();
   }
 
-  displayedColumns: string[] = ['name', 'value'];
+  displayedColumns: string[] = ['name', 'value', 'menu'];
   statisticsService;
   statistics: Statistics[] = [];
 

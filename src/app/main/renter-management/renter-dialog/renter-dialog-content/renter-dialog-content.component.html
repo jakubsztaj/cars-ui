@@ -1,30 +1,40 @@
 <mat-divider></mat-divider>
-<h1 mat-dialog-title>Renter</h1>
+<h1 mat-dialog-title>User Creation </h1>
 <div mat-dialog-content>
-  <p>What's renter first name?</p>
+  <p>What's user first name?</p>
   <mat-form-field appearance="fill">
     <mat-label>First Name</mat-label>
     <input matInput [(ngModel)]="data.renterName">
   </mat-form-field>
-  <p>What's renter last name?</p>
+  <p>What's user last name?</p>
   <mat-form-field appearance="fill">
     <mat-label>Last Name</mat-label>
     <input matInput [(ngModel)]="data.renterLastName">
   </mat-form-field>
-  <p>What's Renter place of residence?</p>
+  <p>What's user place of residence?</p>
   <mat-form-field appearance="fill">
     <mat-label>Place Of Residence</mat-label>
     <input matInput [(ngModel)]="data.renterPlaceOfResidence">
   </mat-form-field>
-  <p>What's renter pesel?</p>
+  <p>What's user pesel?</p>
   <mat-form-field appearance="fill">
     <mat-label>Pesel</mat-label>
     <input matInput [(ngModel)]="data.renterPesel">
   </mat-form-field>
-  <p>What's renter contact number?</p>
+  <p>What's user contact number?</p>
   <mat-form-field appearance="fill">
     <mat-label>Phone Number</mat-label>
     <input matInput [(ngModel)]="data.phoneNumber">
+  </mat-form-field>
+  <p>What's user login?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Login</mat-label>
+    <input matInput [(ngModel)]="data.renterLogin">
+  </mat-form-field>
+  <p>What's user password?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input matInput [(ngModel)]="data.renterPassword">
   </mat-form-field>
 </div>
 <div mat-dialog-actions>

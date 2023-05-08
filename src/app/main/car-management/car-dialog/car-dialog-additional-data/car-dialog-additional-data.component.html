@@ -1,0 +1,78 @@
+<mat-divider></mat-divider>
+<h1 mat-dialog-title>Car</h1>
+  <table mat-table [dataSource]="car" style="width:100%">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef> Type</th>
+      <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+    </ng-container>
+    <ng-container matColumnDef="plates">
+      <th mat-header-cell *matHeaderCellDef> Plates</th>
+      <td mat-cell *matCellDef="let element"> {{element.plates}} </td>
+    </ng-container>
+    <ng-container matColumnDef="vin">
+      <th mat-header-cell *matHeaderCellDef> Vin</th>
+      <td mat-cell *matCellDef="let element"> {{element.vin}} </td>
+    </ng-container>
+    <ng-container matColumnDef="manufacturingYear">
+      <th mat-header-cell *matHeaderCellDef> Manufacturing Year</th>
+      <td mat-cell *matCellDef="let element"> {{element.manufacturingYear}} </td>
+    </ng-container>
+    <ng-container matColumnDef="transmission">
+      <th mat-header-cell *matHeaderCellDef> Transmission</th>
+      <td mat-cell *matCellDef="let element"> {{element.transmission}} </td>
+    </ng-container>
+    <ng-container matColumnDef="fuelType">
+      <th mat-header-cell *matHeaderCellDef> FuelType</th>
+      <td mat-cell *matCellDef="let element"> {{element.fuelType}} </td>
+    </ng-container>
+    <ng-container matColumnDef="typeOfDrive">
+      <th mat-header-cell *matHeaderCellDef> Drive</th>
+      <td mat-cell *matCellDef="let element"> {{element.typeOfDrive}} </td>
+    </ng-container>
+    <ng-container matColumnDef="doors">
+      <th mat-header-cell *matHeaderCellDef> Doors</th>
+      <td mat-cell *matCellDef="let element"> {{element.doors}} </td>
+    </ng-container>
+    <ng-container matColumnDef="seats">
+      <th mat-header-cell *matHeaderCellDef> Seats</th>
+      <td mat-cell *matCellDef="let element"> {{element.seats}} </td>
+    </ng-container>
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price</th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+    <ng-container matColumnDef="mpg">
+      <th mat-header-cell *matHeaderCellDef> Mpg</th>
+      <td mat-cell *matCellDef="let element"> {{element.mpg}} </td>
+    </ng-container>
+    <ng-container matColumnDef="carStatus">
+      <th mat-header-cell *matHeaderCellDef> Car Status</th>
+      <td mat-cell *matCellDef="let element"> {{element.carStatus}} </td>
+    </ng-container>
+    <ng-container matColumnDef="lastRentalDate">
+      <th mat-header-cell *matHeaderCellDef> Last Rental Date</th>
+      <td mat-cell *matCellDef="let element"> {{element.lastRentalDate}} </td>
+    </ng-container>
+    <ng-container matColumnDef="bringBackDate">
+      <th mat-header-cell *matHeaderCellDef> Bring Back Date</th>
+      <td mat-cell *matCellDef="let element"> {{element.bringBackDate}} </td>
+    </ng-container>
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date</th>
+      <td mat-cell *matCellDef="let element">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker" (dateChange)="onDateChange($event)">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker touchUi #picker></mat-datepicker>
+        </mat-form-field>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+

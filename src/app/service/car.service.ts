@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 import {Car} from "../model/Car";
 
 @Injectable({
@@ -8,7 +8,7 @@ import {Car} from "../model/Car";
 })
 export class CarService {
   client: HttpClient;
-  url = 'http://localhost:8080/cars/';
+  url = 'http://localhost:8080/cars';
 
   constructor(private http: HttpClient) {
     this.client = http;
@@ -16,6 +16,10 @@ export class CarService {
 
   loadCars(): Observable<Car[]> {
     return this.http.get<Car[]>(this.url);
+  }
+
+  loadCar(vin: string): Observable<any> {
+    return this.http.get<any>(`${this.url}/load/car/${vin}`);
   }
 
   deleteCars(): Observable<any> {

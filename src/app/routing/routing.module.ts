@@ -8,6 +8,7 @@ import { RenterManagementComponent } from "../main/renter-management/renter-mana
 import { StatisticsComponent } from "../main/statistics/statistics.component";
 import { SupportComponent } from "../main/support/support.component";
 import {StaffManagementComponent} from "../main/staff-management/staff-management.component";
+import {LoginComponent} from "../main/login/login.component";
 
 const routes: Routes = [
   {path: 'home', component: MainAppComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'stats', component: StatisticsComponent},
   {path: 'support', component: SupportComponent},
   {path: 'staff', component: StaffManagementComponent},
+  {path: 'login', component: LoginComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 

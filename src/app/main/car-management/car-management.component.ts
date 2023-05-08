@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import { CarService } from "../../service/car.service";
 import { Car } from "../../model/Car";
+import {MatDialog} from "@angular/material/dialog";
+import {
+  CarDialogAdditionalDataComponent
+} from "./car-dialog/car-dialog-additional-data/car-dialog-additional-data.component";
 
 @Component({
   selector: 'app-car-management',
@@ -8,13 +12,15 @@ import { Car } from "../../model/Car";
   styleUrls: ['./car-management.component.css']
 })
 export class CarManagementComponent {
-  constructor(carService: CarService) {
+  @Output()
+  newItemEvent = new EventEmitter<any>();
+
+  constructor(carService: CarService,  public dialog: MatDialog) {
     this.carService = carService;
     this.loadCars();
   }
 
-  displayedColumns: string[] = ['name', 'type', 'plates', 'vin', 'manufacturingYear',
-    'segment', 'transmission', 'fuelType', 'typeOfDrive', 'doors', 'seats', 'price', 'mpg', 'carStatus', 'lastRentalDate', 'bringBackDate', 'date', 'menu'];
+  displayedColumns: string[] = ['name', 'type', 'manufacturingYear', 'segment', 'carStatus', 'menu'];
   carService: CarService;
   cars: Car[] = [];
 
@@ -24,6 +30,14 @@ export class CarManagementComponent {
         this.cars = data;
       })
 
+  }
+
+
+  loadCar(vin: string): void {
+    this.carService.loadCar(vin)
+      .subscribe(data => {
+        this.cars = data;
+      })
   }
 
   deleteCars(): void {
@@ -100,6 +114,19 @@ export class CarManagementComponent {
 
   onDateChange(input: any): void {
     console.log(input.value);
+  }
+
+  openDataDialog(vin: string): void {
+    const dialogRef = this.dialog.open(CarDialogAdditionalDataComponent, {
+      height: '250px',
+      width: '1600px',
+      data: {
+        car: this.carService.loadCar(vin)
+      }
+    });
+    dialogRef.afterClosed().subscribe(formData => {
+      this.newItemEvent.emit(formData);
+    })
   }
 
 }

@@ -8,7 +8,7 @@ import { Rental } from "../model/Rental";
 })
 export class RentalService {
   client: HttpClient;
-  url = 'http://localhost:8080/rentals/';
+  url = 'http://localhost:8080/rentals';
 
   constructor(private http: HttpClient) {
     this.client = http;

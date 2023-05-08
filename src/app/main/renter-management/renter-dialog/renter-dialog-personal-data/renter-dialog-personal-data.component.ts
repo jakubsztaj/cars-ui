@@ -1,5 +1,5 @@
-import { Component, Inject, Injectable, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from "@angular/material/dialog";
+import { Component, Inject, Injectable } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialog} from "@angular/material/dialog";
 import { RenterService } from "../../../../service/renter.service";
 
 @Component({
@@ -20,15 +20,8 @@ export class RenterDialogPersonalDataComponent {
     })
   }
 
-  displayedColumns: string[] = ['firstName', 'lastName', 'placeOfResidence', 'phoneNumber', "email"];
+  displayedColumns: string[] = ['firstName', 'lastName', 'placeOfResidence', 'phoneNumber', "email", "login", "password"];
   renterService: RenterService;
 
-
-  loadRenter(pesel: string): void {
-    this.renterService.loadRenter(pesel)
-      .subscribe(data => {
-        this.renter = data;
-      })
-  }
 }
 

@@ -25,6 +25,10 @@ export class StaffService {
     return this.http.get<any>(`${this.url}/load/staff/${staffId}`);
   }
 
+  loadStaffMemberByPesel(pesel: string): Observable<any> {
+    return this.http.get<any>(`${this.url}/load/staff/${pesel}`);
+  }
+
   deleteStaffMembers(): Observable<any> {
     return this.http.delete <any>(`${this.url}/delete`);
   }

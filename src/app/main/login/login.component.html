@@ -1,0 +1,28 @@
+<form [formGroup]="loginForm" (submit)="login()" autocomplete="new-password">
+  <h2>Login Panel</h2>
+
+  <div class="form-control">
+    <label for="email">Login</label>
+    <input
+      formControlName="email"
+      id="email"
+      autocomplete="new-password"
+      type="email"
+    />
+  </div>
+
+  <div class="form-control">
+    <label for="password">Password</label>
+    <input
+      formControlName="password"
+      id="password"
+      autocomplete="new-password"
+      type="password"
+    />
+  </div>
+
+  <button type="submit">Login</button>
+  <p></p>
+  <button type="submit">Remain Password</button>
+
+</form>

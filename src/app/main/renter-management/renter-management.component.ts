@@ -1,7 +1,9 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { RenterService } from "../../service/renter.service";
-import { RenterDialogPersonalDataComponent } from "./renter-dialog/renter-dialog-personal-data/renter-dialog-personal-data.component";
-import { MatDialog } from "@angular/material/dialog";
+import {Component, EventEmitter, Output} from '@angular/core';
+import {RenterService} from "../../service/renter.service";
+import {
+  RenterDialogPersonalDataComponent
+} from "./renter-dialog/renter-dialog-personal-data/renter-dialog-personal-data.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-renter-management',
@@ -17,7 +19,7 @@ export class RenterManagementComponent {
     this.loadRenters();
   }
 
-  displayedColumns: string[] = ['pesel','menu'];
+  displayedColumns: string[] = ['pesel', 'menu'];
   renterService: RenterService;
   renters: any;
 
@@ -67,5 +69,41 @@ export class RenterManagementComponent {
     dialogRef.afterClosed().subscribe(formData => {
       this.newItemEvent.emit(formData);
     })
+  }
+
+  filterRenterByPesel(input: any): void {
+    const typeInput = input.value;
+    if (typeInput.length > 1) {
+      this.renterService.filterRenterByPesel(typeInput)
+        .subscribe((renters) => {
+          this.renters = renters;
+        })
+    } else {
+      this.loadRenters();
+    }
+  }
+
+  filterRenterByLastName(input: any): void {
+    const typeInput = input.value;
+    if (typeInput.length > 1) {
+      this.renterService.filterRenterByLastName(typeInput)
+        .subscribe((renters) => {
+          this.renters = renters;
+        })
+    } else {
+      this.loadRenters();
+    }
+  }
+
+  filterRenterByPlaceOfResidence(input: any): void {
+    const typeInput = input.value;
+    if (typeInput.length > 1) {
+      this.renterService.filterRenterByPlaceOfResidence(typeInput)
+        .subscribe((renters) => {
+          this.renters = renters;
+        })
+    } else {
+      this.loadRenters();
+    }
   }
 }

@@ -1,4 +1,18 @@
+<h2>Find User</h2>
+
 <div>
+  <mat-form-field style="width: 200px; margin: 3px; display: block;">
+    <input type="text" matInput placeholder="Find user by pesel"
+           (input)="filterRenterByPesel($event.target)">
+  </mat-form-field>
+  <mat-form-field style="width: 200px; margin: 3px; display: block;">
+    <input type="text" matInput placeholder="Find user by last name"
+           (input)="filterRenterByLastName($event.target)">
+  </mat-form-field>
+  <mat-form-field style="width: 200px; margin: 3px; display: block;">
+    <input type="text" matInput placeholder="Find user by place of residence"
+           (input)="filterRenterByPlaceOfResidence($event.target)">
+  </mat-form-field>
   <app-renter-dialog (newItemEvent)="addRenter($event)"></app-renter-dialog>
   <table mat-table [dataSource]="renters" style="width:100%">
     <ng-container matColumnDef="pesel">
@@ -14,8 +28,11 @@
       <th mat-header-cell *matHeaderCellDef> Menu</th>
       <td mat-cell *matCellDef="let element">
           <button (click)="openDataDialog(element.pesel)">
-            <mat-icon>plus_one</mat-icon>
+            <mat-icon>extension</mat-icon>
           </button>
+        <button>
+          <mat-icon>update</mat-icon>
+        </button>
         <button (click)="deleteRenter(element.pesel)">
           <mat-icon>delete</mat-icon>
         </button>
@@ -24,7 +41,7 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  <h2>Delete All Renters</h2>
+  <h2>Clear List of Users</h2>
   <button (click)="deleteRenters()">
     <mat-icon>delete</mat-icon>
   </button>

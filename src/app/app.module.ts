@@ -42,6 +42,13 @@ import {StaffManagementComponent} from "./main/staff-management/staff-management
 import {
   StaffDialogContentComponent
 } from "./main/staff-management/staff-dialog/staff-dialog-content/staff-dialog-content-component";
+import {
+  CarDialogAdditionalDataComponent
+} from "./main/car-management/car-dialog/car-dialog-additional-data/car-dialog-additional-data.component";
+import {
+  StaffDialogPersonalData
+} from "./main/staff-management/staff-dialog/staff-dialog-personal-data/staff-dialog-personal-data";
+import {LoginComponent} from "./main/login/login.component";
 
 @NgModule({
   declarations: [
@@ -61,7 +68,10 @@ import {
     FilterManagementComponent,
     RenterDialogPersonalDataComponent,
     StaffManagementComponent,
-    StaffDialogContentComponent
+    StaffDialogContentComponent,
+    CarDialogAdditionalDataComponent,
+    StaffDialogPersonalData,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

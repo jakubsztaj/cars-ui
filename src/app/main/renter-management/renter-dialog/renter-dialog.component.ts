@@ -24,18 +24,10 @@ export class RenterDialogComponent {
         renterLastName: "",
         renterPlaceOfResidence: "",
         renterPesel: "",
-        email: ""
+        email: "",
+        login: "",
+        password: ""
       }
-    });
-    dialogRef.afterClosed().subscribe(formData => {
-      this.newItemEvent.emit(formData);
-    })
-  }
-
-  openDataDialog(): void {
-    const dialogRef = this.dialog.open(RenterDialogPersonalDataComponent, {
-      width: '250px',
-      data: {}
     });
     dialogRef.afterClosed().subscribe(formData => {
       this.newItemEvent.emit(formData);
